@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harish Thota | Data & BI Analyst Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        
+        /* Enhanced Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: white;
+            padding: 100px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid #3b82f6;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            font-size: 4em;
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+        
+        .hero .tagline {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #60a5fa;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto 48px;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .contact-info a,
+        .contact-info span {
+            color: white;
+            text-decoration: none;
+            font-size: 1.05em;
+            font-weight: 600;
+            opacity: 0.95;
+            transition: all 0.3s ease;
+            padding: 12px 24px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-info a:hover {
+            opacity: 1;
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
+        }
+        
+        /* Enhanced Stats Section */
+        .stats {
+            background: white;
+            padding: 80px 20px;
+            margin-top: -30px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.05);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 28px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            padding: 40px 28px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.25);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: fadeInUp 0.8s ease-out backwards;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+        
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card:nth-child(4) { animation-delay: 0.4s; }
+        
+        .stat-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.35);
+        }
+        
+        .stat-number {
+            font-size: 3.2em;
+            font-weight: 900;
+            margin-bottom: 12px;
+            letter-spacing: -2px;
+        }
+        
+        .stat-label {
+            font-size: 1em;
+            opacity: 0.95;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 90px 20px;
+        }
+        
+        section h2 {
+            font-size: 3em;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #0f172a;
+            letter-spacing: -1.5px;
+        }
+        
+        section .section-subtitle {
+            text-align: center;
+            font-size: 1.3em;
+            color: #64748b;
+            margin-bottom: 70px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 500;
+        }
+        
+        /* Enhanced Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 36px;
+            margin-top: 70px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid #e2e8f0;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+        
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        
+        .project-card:hover {
+            transform: translateY(-16px);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.12);
+            border-color: #3b82f6;
+        }
+        
+        .project-header {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            padding: 36px;
+            position: relative;
+        }
+        
+        .project-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .project-header h3 {
+            font-size: 1.6em;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        
+        .project-meta {
+            font-size: 1em;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+        
+        .project-body {
+            padding: 36px;
+        }
+        
+        .project-description {
+            margin-bottom: 28px;
+            color: #475569;
+            font-size: 1.1em;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+        
+        .impact-grid {
+            display: grid;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+        
+        .impact-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 16px;
+            background: #f8fafc;
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
+            transition: all 0.3s ease;
+        }
+        
+        .impact-item:hover {
+            background: #f1f5f9;
+            transform: translateX(6px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+        }
+        
+        .impact-icon {
+            color: #10b981;
+            margin-right: 14px;
+            font-size: 1.4em;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .impact-text {
+            color: #1e293b;
+            font-size: 1em;
+            line-height: 1.7;
+            font-weight: 600;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 28px;
+            padding-top: 28px;
+            border-top: 2px solid #e2e8f0;
+        }
+        
+        .tech-tag {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 24px;
+            font-size: 0.9em;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .tech-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+        }
+        
+        /* Enhanced Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+            margin-top: 70px;
+        }
+        
+        .skill-card {
+            background: white;
+            padding: 36px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            border: 2px solid #e2e8f0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+        
+        .skill-card:nth-child(1) { animation-delay: 0.1s; }
+        .skill-card:nth-child(2) { animation-delay: 0.2s; }
+        .skill-card:nth-child(3) { animation-delay: 0.3s; }
+        .skill-card:nth-child(4) { animation-delay: 0.4s; }
+        .skill-card:nth-child(5) { animation-delay: 0.5s; }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+            border-color: #3b82f6;
+        }
+        
+        .skill-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.7em;
+            margin-bottom: 24px;
+            border: 2px solid rgba(59, 130, 246, 0.2);
+        }
+        
+        .skill-card h3 {
+            font-size: 1.4em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 12px 0;
+            color: #475569;
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+        
+        .skill-list li:before {
+            content: "▸";
+            color: #3b82f6;
+            font-weight: bold;
+            margin-right: 14px;
+            font-size: 1.3em;
+        }
+        
+        /* Experience Timeline */
+        .experience-section {
+            background: #f8fafc;
+        }
+        
+        .timeline {
+            max-width: 950px;
+            margin: 70px auto 0;
+        }
+        
+        .timeline-item {
+            background: white;
+            padding: 44px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            margin-bottom: 36px;
+            border-left: 5px solid #3b82f6;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: fadeInUp 0.8s ease-out backwards;
+            border: 2px solid #e2e8f0;
+            border-left: 5px solid #3b82f6;
+        }
+        
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+            border-color: #3b82f6;
+        }
+        
+        .timeline-item h3 {
+            font-size: 1.7em;
+            color: #3b82f6;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        
+        .timeline-company {
+            font-size: 1.3em;
+            color: #1e293b;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .timeline-period {
+            color: #64748b;
+            font-size: 1em;
+            margin-bottom: 28px;
+            font-weight: 600;
+        }
+        
+        .achievement {
+            margin-bottom: 18px;
+            padding: 18px;
+            background: #f8fafc;
+            border-radius: 12px;
+            color: #1e293b;
+            line-height: 1.8;
+            font-size: 1.05em;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .achievement:hover {
+            background: #f1f5f9;
+            transform: translateX(6px);
+        }
+        
+        .achievement strong {
+            color: #3b82f6;
+            font-weight: 800;
+        }
+        
+        /* Education Section */
+        .education-section {
+            background: white;
+        }
+        
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 36px;
+            max-width: 1100px;
+            margin: 70px auto 0;
+        }
+        
+        .education-card {
+            background: white;
+            padding: 44px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            border: 2px solid #e2e8f0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+            border-color: #3b82f6;
+        }
+        
+        .education-card h3 {
+            font-size: 1.6em;
+            color: #3b82f6;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+        
+        .education-card .institution {
+            font-size: 1.3em;
+            color: #1e293b;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .education-card .period {
+            color: #64748b;
+            font-size: 1em;
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+        
+        .education-card .highlight {
+            color: #475569;
+            line-height: 1.8;
+            padding: 16px;
+            background: #f8fafc;
+            border-radius: 12px;
+            margin-top: 16px;
+            font-size: 1em;
+            font-weight: 600;
+        }
+        
+        .education-card .coursework {
+            margin-top: 20px;
+        }
+        
+        .education-card .coursework-title {
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 12px;
+            font-size: 1.05em;
+        }
+        
+        .education-card .coursework-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .coursework-tag {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 700;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: white;
+            padding: 110px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid #3b82f6;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta h2 {
+            color: white;
+            font-size: 2.8em;
+            margin-bottom: 24px;
+            font-weight: 900;
+        }
+        
+        .cta p {
+            font-size: 1.4em;
+            margin-bottom: 48px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 20px 56px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 14px;
+            font-weight: 800;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 64px rgba(59, 130, 246, 0.4);
+            background: #2563eb;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 48px 20px;
+            text-align: center;
+        }
+        
+        footer p {
+            opacity: 0.8;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero .tagline {
+                font-size: 1.4em;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1em;
+            }
+            
+            section h2 {
+                font-size: 2.2em;
+            }
+            
+            .projects-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Harish Thota</h1>
+                <div class="tagline">Data & BI Analyst</div>
+                <div class="subtitle">
+                    I fix data that nobody trusts and build platforms that help teams make confident decisions
+                </div>
+                <div class="contact-info">
+                    <a href="mailto:harishthota001@gmail.com">📧 Email</a>
+                    <a href="tel:0459182404">📱 0459 182 404</a>
+                    <a href="https://linkedin.com/in/harish-thota-ds" target="_blank">💼 LinkedIn</a>
+                    <span>📍 Adelaide, SA</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Analytics & BI Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Production Platforms Built</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">Average Platform Uptime</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Business Users Supported</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Projects -->
+    <section style="background: white;">
+        <div class="container">
+            <h2>What I've Built</h2>
+            <div class="section-subtitle">Real business problems I've solved with data</div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🚀</div>
+                        <h3>Real-Time Decision Platform</h3>
+                        <div class="project-meta">Grad Careers | Current Role</div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-description">
+                            Managers were making staffing decisions using 2-day-old Excel files with thousands of errors. I built a new platform that shows them real-time data they can actually trust.
+                        </div>
+                        <div class="impact-grid">
+                            <div class="impact-item">
+                                <span class="impact-icon">✓</span>
+                                <span class="impact-text"><strong>Forecasts went from 65% to 90% accurate</strong> so managers can finally plan properly</span>
+                            </div>
+                            <div class="impact-item">
+                                <span class="impact-icon">✓</span>
+                                <span class="impact-text"><strong>Finance and operations stopped arguing</strong> so disputes dropped from 15-20 to 3-5 per week</span>
+                            </div>
+                            <div class="impact-item">
+                                <span class="impact-icon">✓</span>
+                                <span class="impact-text"><strong>Fixed 4,000+ data errors</strong> affecting 200,000+ booking records</span>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Microsoft Fabric</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🛡️</div>
+                        <h3>Automated Compliance System</h3>
+                        <div class="project-meta">AIML | 1 Year</div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-description">
+                            Analysts were spending 40+ hours every month manually checking $42M in transactions for compliance problems. I built a system that catches issues automatically.
+                        </div>
+                        <div class="impact-grid">
+                            <div class="impact-item">
+                                <span class="impact-icon">✓</span>
+                                <span class="impact-text"><strong>Cut manual work from 40+ hours to under 2</strong> so analysts got their time back</span>
+                            </div>
+                            <div class="impact-item">
+                                <span class="impact-icon">✓</span>
+                                <span class="impact-text"><strong>Prevented 1,200+ compliance violations</strong> before auditors could find them</span>
+                            </div>
+                            <div class="impact-item">
+                                <span class="impact-icon">✓</span>
+                                <span class="impact-text"><strong>Made problem-solving 82% faster</strong> so resolution time from 45 min to 8 min</span>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Databricks</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PySpark</span>
+                            <span class="tech-tag">Power BI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">📊</div>
+                        <h3>Supplier Performance Dashboards</h3>
+                        <div class="project-meta">Hyundai Mobis | 3 Years</div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-description">
+                            Teams were spending days manually checking supplier deliveries and couldn't solve problems until it was too late. I built dashboards that show issues immediately.
+                        </div>
+                        <div class="impact-grid">
+                            <div class="impact-item">
+                                <span class="impact-icon">✓</span>
+                                <span class="impact-text"><strong>Suppliers improved from 72% to 89% on-time</strong> so production ran smoother</span>
+                            </div>
+                            <div class="impact-item">
+                                <span class="impact-icon">✓</span>
+                                <span class="impact-text"><strong>Problem-solving sped up 87%</strong> so from 2 days down to 4 hours</span>
+                            </div>
+                            <div class="impact-item">
+                                <span class="impact-icon">✓</span>
+                                <span class="impact-text"><strong>Eliminated 8+ hours of weekly manual checking</strong> for the team</span>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Azure SQL</span>
+                            <span class="tech-tag">Excel</span>
+                            <span class="tech-tag">Power Apps</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section style="background: #f8fafc;">
+        <div class="container">
+            <h2>My Toolkit</h2>
+            <div class="section-subtitle">The tools I use to solve business problems</div>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <h3>Analytics & Reporting Tools</h3>
+                    <ul class="skill-list">
+                        <li>Excel (advanced formulas, pivot tables, data modeling)</li>
+                        <li>Tableau (interactive dashboards, visual analytics)</li>
+                        <li>Power BI (end-to-end reporting, DAX, custom visuals)</li>
+                        <li>SQL (querying, joins, optimization, stored procedures)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">☁️</div>
+                    <h3>Cloud Data Platforms</h3>
+                    <ul class="skill-list">
+                        <li>Microsoft Fabric (lakehouse, warehouse, pipelines)</li>
+                        <li>Databricks (PySpark, Delta Lake, notebooks)</li>
+                        <li>Azure (SQL Database, Synapse, Data Factory)</li>
+                        <li>Building platforms from scratch or improving existing ones</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3>Programming & Automation</h3>
+                    <ul class="skill-list">
+                        <li>Python (data cleaning, automation, validation)</li>
+                        <li>R (statistical analysis, data manipulation)</li>
+                        <li>PySpark (big data processing, transformations)</li>
+                        <li>Power Automate (workflow automation, alerts)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">🏭</div>
+                    <h3>Industry Experience</h3>
+                    <ul class="skill-list">
+                        <li><strong>Manufacturing & Supply Chain</strong><br>3 years at Hyundai Mobis building BI dashboards for automotive procurement and warehouse operations. Tracked 200+ suppliers, improved on-time delivery 72% to 89%, reduced issue resolution from 2 days to 4 hours.</li>
+                        <li><strong>Healthcare Compliance</strong><br>1 year at AIML automating compliance checks for $42M research funding. Built Databricks platform preventing 1,200+ violations annually, maintained 99.2% uptime for audit teams.</li>
+                        <li><strong>Graduate Career Services</strong><br>Current role at Grad Careers delivering Microsoft Fabric platform for session booking analytics. Improved forecast accuracy 65% to 90%, ended 18-month finance operations dispute.</li>
+                        <li><strong>Finance & Payroll</strong><br>7 months at OESON Global building payroll analytics protecting 450+ employees. Created Azure Synapse pipelines catching 3,000+ anomalies before payment runs, achieved 100% on-time delivery.</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">🎯</div>
+                    <h3>What Makes Me Effective</h3>
+                    <ul class="skill-list">
+                        <li>I speak both "tech" and "business" so can translate between teams</li>
+                        <li>I fix root causes, not symptoms so problems stay solved</li>
+                        <li>I build systems people actually use so 99% uptime track record</li>
+                        <li>I make data trustworthy so teams stop arguing about numbers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="experience-section">
+        <div class="container">
+            <h2>My Journey</h2>
+            <div class="section-subtitle">Where I've worked and what I've delivered</div>
+            
+            <div class="timeline">
+                <!-- Current Role -->
+                <div class="timeline-item">
+                    <h3>IT Data Analyst</h3>
+                    <div class="timeline-company">Grad Careers</div>
+                    <div class="timeline-period">November 2024 - Present | Adelaide, SA</div>
+                    
+                    <div class="achievement">
+                        <strong>Built a brand-new Microsoft Fabric platform in 30 days</strong> that connects the booking system, Salesforce, and finance database and now 25+ coordinators see real-time data instead of waiting 2 days for Excel reports
+                    </div>
+                    
+                    <div class="achievement">
+                        <strong>Stopped managers from making decisions on bad data</strong> by fixing corrupted timestamps in 200,000+ booking records so weekly disputes between teams dropped from 15-20 to just 3-5
+                    </div>
+                    
+                    <div class="achievement">
+                        <strong>Made forecasts actually useful</strong> by cleaning data and finding a system bug affecting 2,000+ monthly records and accuracy jumped from 65% to 90% so people can actually plan ahead
+                    </div>
+                    
+                    <div class="achievement">
+                        <strong>Ended an 18-month fight between finance and operations</strong> by running 6 workshops where everyone agreed on 18 business rules (now documented in the system)
+                    </div>
+                    
+                    <div class="achievement">
+                        <strong>Gave coordinators 6+ hours back each week</strong> by building automated alerts for late bookings and missed deadlines instead of manual follow-ups
+                    </div>
+                </div>
+
+                <!-- AIML Role -->
+                <div class="timeline-item">
+                    <h3>Data Platform & BI Analyst</h3>
+                    <div class="timeline-company">Australian Institute for Machine Learning (AIML)</div>
+                    <div class="timeline-period">September 2023 - September 2024 | Adelaide, SA</div>
+                    
+                    <div class="achievement">
+                        <strong>Protected $42M in research funding</strong> by building a Databricks system that automatically checks every transaction against 22 compliance rules before auditors see them
+                    </div>
+                    
+                    <div class="achievement">
+                        <strong>Saved compliance analysts 40+ hours every month</strong> by automating the manual work of tagging exceptions so what took all month now finishes in under 2 hours
+                    </div>
+                    
+                    <div class="achievement">
+                        <strong>Stopped 1,200+ compliance violations from happening</strong> by catching problems early with Python automation instead of finding them after the fact
+                    </div>
+                    
+                    <div class="achievement">
+                        <strong>Helped investigators work 82% faster</strong> by building Power BI dashboards with drill-through so resolution time dropped from 45 minutes to 8 minutes per case
+                    </div>
+                    
+                    <div class="achievement">
+                        <strong>Made the data pipeline 73% faster</strong> (from 45 minutes down to 12) while processing more data through better design and optimization
+                    </div>
+                </div>
+
+                <!-- OESON Role -->
+                <div class="timeline-item">
+                    <h3>Data Analyst</h3>
+                    <div class="timeline-company">OESON Global</div>
+                    <div class="timeline-period">January 2023 - July 2023 | Australia</div>
+                    
+                    <div class="achievement">
+                        <strong>Protected 450+ employees from payroll mistakes</strong> by building Azure Synapse pipelines that catch errors like duplicate shifts and wrong pay codes before payday
+                    </div>
+                    
+                    <div class="achievement">
+                        <strong>Found 3,000+ payroll problems before they became payment issues</strong> using automated checks on time tracking and HR data
+                    </div>
+                    
+                    <div class="achievement">
+                        <strong>Gave Finance a 1-2 week head start on problems</strong> by using Python to spot unusual patterns in $2.1M monthly payroll before running pay
+                    </div>
+                    
+                    <div class="achievement">
+                        <strong>Made payroll approval 80% faster</strong> by building dashboards that let Finance managers drill from summary to detail so went from 3 days to 6 hours
+                    </div>
+                </div>
+
+                <!-- Hyundai Role -->
+                <div class="timeline-item">
+                    <h3>BI & Data Platform Analyst</h3>
+                    <div class="timeline-company">Hyundai Mobis Technical Centre of India</div>
+                    <div class="timeline-period">July 2019 - July 2022 | India</div>
+                    
+                    <div class="achievement">
+                        <strong>Built a BI platform from scratch</strong> that pulls data from 10+ SAP tables into Azure SQL and now 40+ procurement and warehouse staff can see what's actually happening with suppliers
+                    </div>
+                    
+                    <div class="achievement">
+                        <strong>Helped suppliers deliver better</strong> by showing them real performance data so on-time delivery improved from 72% to 89% in 6 months
+                    </div>
+                    
+                    <div class="achievement">
+                        <strong>Made problem-solving 87% faster</strong> with drill-down dashboards tracking 200+ suppliers so teams went from taking 2 days to just 4 hours to fix issues
+                    </div>
+                    
+                    <div class="achievement">
+                        <strong>Stopped the weekly manual grind</strong> by eliminating 8+ hours of data reconciliation so made data refreshes 72% faster so reports always match
+                    </div>
+                    
+                    <div class="achievement">
+                        <strong>Built full automation suite</strong> with Power Apps for tracking issues, Power Automate for alerts, and SharePoint for collaboration
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="education-section">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="section-subtitle">My academic foundation in data science and analytics</div>
+            
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Master of Data Science</h3>
+                    <div class="institution">University of Adelaide</div>
+                    <div class="period">2022 - 2024 | Adelaide, SA</div>
+                    <div class="highlight">
+                        <strong>GPA: 6.75/7</strong> (Distinction Average)
+                    </div>
+                    <div class="highlight">
+                        <strong>Specialized Training:</strong> Python, R, SQL, Tableau, Power BI, Machine Learning, Deep Learning, Statistical Modeling, Big Data Technologies
+                    </div>
+                </div>
+                
+                <div class="education-card">
+                    <h3>Bachelor of Electronics & Communication Engineering</h3>
+                    <div class="institution">VNR Vignana Jyothi Institute of Engineering and Technology</div>
+                    <div class="period">2015 - 2019 | Telangana, India</div>
+                    <div class="highlight">
+                        <strong>GPA: 9.02/10</strong> (First Class with Distinction)
+                    </div>
+                    <div class="highlight">
+                        <strong>Specialized Training:</strong> C, C++, Java, Python, Embedded Systems, Signal Processing
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Let's Work Together</h2>
+                <p>
+                    I build data systems that people trust and use every day.<br>
+                    Ready to talk about how I can help your team?
+                </p>
+                <a href="mailto:harishthota001@gmail.com" class="btn">Get In Touch</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Harish Thota | Data & BI Analyst</p>
+            <p>Adelaide, South Australia | Available for Full-Time Opportunities</p>
+        </div>
+    </footer>
+</body>
+</html>
