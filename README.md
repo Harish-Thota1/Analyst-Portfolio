@@ -1,4 +1,4 @@
-# Harish Thota — Data & BI Analyst Portfolio
+# Harish Thota | Data & BI Analyst
 
 ## 👋 I fix data that nobody trusts
 
@@ -27,12 +27,12 @@ I build platforms where:
 - Writes **Python & SQL** for data quality (not just dashboards)
 - Can **explain tech to non-tech people** (ended an 18-month dispute)
 
-**→ This portfolio proves I can do all of that.**
+** to  This portfolio proves I can do all of that.**
 
 ### **Quick Navigation:**
-- 🌐 **[Start Here: Portfolio Website](index.html)** ← Visual overview with animations
-- 📊 **[Case Studies](case-studies/)** ← Deep dives into 3 major projects  
-- 💻 **[Code Samples](code-samples/)** ← Real production code (SQL, Python, PySpark, DAX)
+- 🌐 **[Start Here: Portfolio Website](index.html)**  Visual overview with animations
+- 📊 **[Case Studies](case-studies/)**  Deep dives into 3 major projects  
+- 💻 **[Code Samples](code-samples/)**  Real production code (SQL, Python, PySpark, DAX)
 
 ---
 
@@ -44,12 +44,12 @@ I build platforms where:
 **What I Built:** Microsoft Fabric platform replacing Excel with real-time Power BI dashboards
 
 **Results:**
-- Forecast accuracy: **65% → 90%** (people can actually plan now)
-- Disputes: **15-20 → 3-5 per week** (finance & operations finally agree)
+- Forecast accuracy: **65% to 90%** (people can actually plan now)
+- Disputes: **15-20 to 3-5 per week** (finance & operations finally agree)
 - Ended an **18-month feud** over "whose numbers are right"
 
 **Tech:** Microsoft Fabric, Python, Power BI, SQL  
-**[→ Read Full Case Study](case-studies/microsoft-fabric-implementation.md)**
+**[Read Full Case Study](case-studies/microsoft-fabric-implementation.md)**
 
 ---
 
@@ -59,12 +59,12 @@ I build platforms where:
 **What I Built:** Databricks platform that automatically catches problems before auditors do
 
 **Results:**
-- Manual work: **40+ hours → under 2 hours** (analysts can do real work now)
+- Manual work: **40+ hours to under 2 hours** (analysts can do real work now)
 - Problems prevented: **1,200+ violations** stopped before they reached auditors
-- Resolution time: **45 minutes → 8 minutes** (investigators are 82% faster)
+- Resolution time: **45 minutes to 8 minutes** (investigators are 82% faster)
 
 **Tech:** Databricks, Python, PySpark, Power BI  
-**[→ Read Full Case Study](case-studies/databricks-compliance-platform.md)**
+**[Read Full Case Study](case-studies/databricks-compliance-platform.md)**
 
 ---
 
@@ -74,19 +74,19 @@ I build platforms where:
 **What I Built:** BI dashboards + Power Platform automation tracking 200+ suppliers
 
 **Results:**
-- Supplier performance: **72% → 89%** on-time delivery (production runs smoother)
-- Problem resolution: **2 days → 4 hours** (87% faster)
+- Supplier performance: **72% to 89%** on-time delivery (production runs smoother)
+- Problem resolution: **2 days to 4 hours** (87% faster)
 - Manual work: **8+ hours weekly** eliminated (no more spreadsheet reconciliation)
 
 **Tech:** Power BI, Azure SQL, Azure Data Factory, Power Apps, Power Automate  
-**[→ Read Full Case Study](case-studies/manufacturing-supply-chain-bi.md)**
+**[Read Full Case Study](case-studies/manufacturing-supply-chain-bi.md)**
 
 ---
 
 ## 🛠️ What I Actually Do (Plain English)
 
 **Platforms I Build:**
-- Microsoft Fabric (lakehouse → warehouse → Power BI)
+- Microsoft Fabric (lakehouse, warehouse, Power BI)
 - Databricks (PySpark, compliance automation, $42M+ transactions)
 - Azure (SQL, Synapse, Data Factory, end-to-end pipelines)
 
@@ -97,15 +97,21 @@ I build platforms where:
 - DAX for Power BI measures
 
 **Problems I Solve:**
-- "Nobody trusts the data" → Build validation frameworks
-- "Takes forever to load" → Optimize pipelines (70%+ faster)
-- "Teams are fighting over numbers" → Document business rules everyone agrees on
-- "We're always fixing the same problems" → Automate exception detection
+- "Nobody trusts the data" - I build validation frameworks
+- "Takes forever to load" - I optimize pipelines (70%+ faster)
+- "Teams are fighting over numbers" - I document business rules everyone agrees on
+- "We're always fixing the same problems" - I automate exception detection
 
 **Industries I Know:**
-- Manufacturing & supply chain (3 years, automotive)
-- Healthcare compliance (1 year, $42M research grants)
-- Finance & payroll (analyst protection, error prevention)
+
+**Manufacturing & Supply Chain**  
+3 years at Hyundai Mobis in automotive procurement and warehouse BI. Built dashboards tracking 200+ suppliers. Improved supplier on-time delivery from 72% to 89%. Reduced problem resolution from 2 days to 4 hours.
+
+**Healthcare Compliance**  
+1 year at AIML automating compliance for $42M research funding. Built Databricks platform preventing 1,200+ violations annually. Maintained 99.2% platform uptime supporting compliance audit teams.
+
+**Finance & Payroll**  
+7 months at OESON Global building payroll analytics for 450+ employees. Created Azure Synapse pipelines catching 3,000+ anomalies before payment runs. Achieved 100% on-time delivery for 6 months.
 
 ---
 
@@ -122,6 +128,20 @@ I build platforms where:
 - 40+ hours monthly saved for analysts
 - 75% reduction in team disputes
 - 80%+ faster issue resolution
+
+---
+
+## 🎓 Education
+
+**Master of Data Science**  
+University of Adelaide | 2022 to 2024 | Adelaide, SA  
+**GPA: 6.75/7 (Distinction Average)**  
+**Specialized Training:** Python, R, SQL, Tableau, Power BI, Machine Learning, Deep Learning, Statistical Modeling, Big Data Technologies
+
+**Bachelor of Electronics & Communication Engineering**  
+VNR Vignana Jyothi Institute of Engineering and Technology | 2015 to 2019 | Telangana, India  
+**GPA: 9.02/10 (First Class with Distinction)**  
+**Specialized Training:** C, C++, Java, Python, Embedded Systems, Signal Processing
 
 ---
 
@@ -147,14 +167,14 @@ I build platforms where:
 
 ```
 portfolio/
-├── index.html                          ← Start here (visual, interactive)
-├── README.md                           ← You are here
+├── index.html                           Start here (visual, interactive)
+├── README.md                            You are here
 ├── case-studies/
-│   ├── microsoft-fabric-implementation.md    ← Microsoft Fabric deep dive
-│   ├── databricks-compliance-platform.md     ← Databricks compliance system
-│   └── manufacturing-supply-chain-bi.md      ← Manufacturing BI suite
+│   ├── microsoft-fabric-implementation.md     Microsoft Fabric deep dive
+│   ├── databricks-compliance-platform.md      Databricks compliance system
+│   └── manufacturing-supply-chain-bi.md       Manufacturing BI suite
 └── code-samples/
-    └── technical-examples.md           ← Real code (SQL, Python, PySpark, DAX)
+    └── technical-examples.md            Real code (SQL, Python, PySpark, DAX)
 ```
 
 ---
