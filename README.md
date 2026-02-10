@@ -66,7 +66,7 @@ All examples use anonymised or synthetic data and exclude proprietary identifier
 
 ## What I'm looking for
 
-Open to Data & BI Analyst / Analytics Engineer roles focused on operational reporting, data quality, and governed self-service BI.
+Open to Data Analyst / Reporting Analyst/ BI Analyst/ Analytics Engineer roles focused on operational reporting, data quality, and governed self-service BI.
 
 ---
 
