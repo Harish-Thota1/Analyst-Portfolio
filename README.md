@@ -1,4 +1,4 @@
-# Harish Thota — Data & BI Analyst
+# Harish Thota — Data & BI Analyst Portfolio
 
 ## 👋 I fix data that nobody trusts
 
