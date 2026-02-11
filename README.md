@@ -30,7 +30,7 @@ I build platforms where:
 ** to  This portfolio proves I can do all of that.**
 
 ### **Quick Navigation:**
-- 🌐 **[Start Here: Portfolio Website](index.html)**  Visual overview with animations
+- 🌐 **[Start Here: Portfolio Website](https://harish-thota1.github.io/Analyst-Portfolio/)**  Visual overview with animations
 - 📊 **[Case Studies](case-studies/)**  Deep dives into 3 major projects  
 - 💻 **[Code Samples](code-samples/)**  Real production code (SQL, Python, PySpark, DAX)
 
