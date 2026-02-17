@@ -1,1106 +1,848 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harish Thota | Data & BI Analyst Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.6;
-            color: #1a202c;
-            background: #f8fafc;
-            overflow-x: hidden;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-        
-        /* Enhanced Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-            color: white;
-            padding: 100px 20px 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 4px solid #3b82f6;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
-            animation: pulse 8s ease-in-out infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .hero h1 {
-            font-size: 4em;
-            font-weight: 900;
-            margin-bottom: 20px;
-            letter-spacing: -2px;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-        }
-        
-        .hero .tagline {
-            font-size: 2em;
-            font-weight: 700;
-            margin-bottom: 24px;
-            color: #60a5fa;
-        }
-        
-        .hero .subtitle {
-            font-size: 1.3em;
-            opacity: 0.95;
-            max-width: 800px;
-            margin: 0 auto 48px;
-            font-weight: 400;
-            line-height: 1.8;
-        }
-        
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-        
-        .contact-info a,
-        .contact-info span {
-            color: white;
-            text-decoration: none;
-            font-size: 1.05em;
-            font-weight: 600;
-            opacity: 0.95;
-            transition: all 0.3s ease;
-            padding: 12px 24px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .contact-info a:hover {
-            opacity: 1;
-            background: rgba(59, 130, 246, 0.2);
-            border-color: rgba(59, 130, 246, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
-        }
-        
-        /* Enhanced Stats Section */
-        .stats {
-            background: white;
-            padding: 80px 20px;
-            margin-top: -30px;
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 -10px 40px rgba(0,0,0,0.05);
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 28px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        
-        .stat-card {
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-            padding: 40px 28px;
-            border-radius: 20px;
-            text-align: center;
-            color: white;
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.25);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: fadeInUp 0.8s ease-out backwards;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .stat-card:hover::before {
-            opacity: 1;
-        }
-        
-        .stat-card:nth-child(1) { animation-delay: 0.1s; }
-        .stat-card:nth-child(2) { animation-delay: 0.2s; }
-        .stat-card:nth-child(3) { animation-delay: 0.3s; }
-        .stat-card:nth-child(4) { animation-delay: 0.4s; }
-        
-        .stat-card:hover {
-            transform: translateY(-12px) scale(1.03);
-            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.35);
-        }
-        
-        .stat-number {
-            font-size: 3.2em;
-            font-weight: 900;
-            margin-bottom: 12px;
-            letter-spacing: -2px;
-        }
-        
-        .stat-label {
-            font-size: 1em;
-            opacity: 0.95;
-            font-weight: 600;
-            line-height: 1.4;
-        }
-        
-        /* Section Styles */
-        section {
-            padding: 90px 20px;
-        }
-        
-        section h2 {
-            font-size: 3em;
-            font-weight: 900;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #0f172a;
-            letter-spacing: -1.5px;
-        }
-        
-        section .section-subtitle {
-            text-align: center;
-            font-size: 1.3em;
-            color: #64748b;
-            margin-bottom: 70px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 500;
-        }
-        
-        /* Enhanced Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 36px;
-            margin-top: 70px;
-        }
-        
-        .project-card {
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 2px solid #e2e8f0;
-            animation: fadeInUp 0.8s ease-out backwards;
-        }
-        
-        .project-card:nth-child(1) { animation-delay: 0.1s; }
-        .project-card:nth-child(2) { animation-delay: 0.2s; }
-        .project-card:nth-child(3) { animation-delay: 0.3s; }
-        
-        .project-card:hover {
-            transform: translateY(-16px);
-            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.12);
-            border-color: #3b82f6;
-        }
-        
-        .project-header {
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-            color: white;
-            padding: 36px;
-            position: relative;
-        }
-        
-        .project-icon {
-            width: 64px;
-            height: 64px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2em;
-            margin-bottom: 20px;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .project-header h3 {
-            font-size: 1.6em;
-            font-weight: 800;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
-        
-        .project-meta {
-            font-size: 1em;
-            opacity: 0.9;
-            font-weight: 600;
-        }
-        
-        .project-body {
-            padding: 36px;
-        }
-        
-        .project-description {
-            margin-bottom: 28px;
-            color: #475569;
-            font-size: 1.1em;
-            line-height: 1.8;
-            font-weight: 500;
-        }
-        
-        .impact-grid {
-            display: grid;
-            gap: 14px;
-            margin-bottom: 28px;
-        }
-        
-        .impact-item {
-            display: flex;
-            align-items: flex-start;
-            padding: 16px;
-            background: #f8fafc;
-            border-radius: 12px;
-            border-left: 4px solid #3b82f6;
-            transition: all 0.3s ease;
-        }
-        
-        .impact-item:hover {
-            background: #f1f5f9;
-            transform: translateX(6px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
-        }
-        
-        .impact-icon {
-            color: #10b981;
-            margin-right: 14px;
-            font-size: 1.4em;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-        
-        .impact-text {
-            color: #1e293b;
-            font-size: 1em;
-            line-height: 1.7;
-            font-weight: 600;
-        }
-        
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 28px;
-            padding-top: 28px;
-            border-top: 2px solid #e2e8f0;
-        }
-        
-        .tech-tag {
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-            color: white;
-            padding: 8px 18px;
-            border-radius: 24px;
-            font-size: 0.9em;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .tech-tag:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
-        }
-        
-        /* Enhanced Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 28px;
-            margin-top: 70px;
-        }
-        
-        .skill-card {
-            background: white;
-            padding: 36px;
-            border-radius: 20px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-            border: 2px solid #e2e8f0;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: fadeInUp 0.8s ease-out backwards;
-        }
-        
-        .skill-card:nth-child(1) { animation-delay: 0.1s; }
-        .skill-card:nth-child(2) { animation-delay: 0.2s; }
-        .skill-card:nth-child(3) { animation-delay: 0.3s; }
-        .skill-card:nth-child(4) { animation-delay: 0.4s; }
-        .skill-card:nth-child(5) { animation-delay: 0.5s; }
-        
-        .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
-            border-color: #3b82f6;
-        }
-        
-        .skill-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.7em;
-            margin-bottom: 24px;
-            border: 2px solid rgba(59, 130, 246, 0.2);
-        }
-        
-        .skill-card h3 {
-            font-size: 1.4em;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: #0f172a;
-        }
-        
-        .skill-list {
-            list-style: none;
-        }
-        
-        .skill-list li {
-            padding: 12px 0;
-            color: #475569;
-            font-size: 1em;
-            display: flex;
-            align-items: center;
-            line-height: 1.6;
-            font-weight: 600;
-        }
-        
-        .skill-list li:before {
-            content: "▸";
-            color: #3b82f6;
-            font-weight: bold;
-            margin-right: 14px;
-            font-size: 1.3em;
-        }
-        
-        /* Experience Timeline */
-        .experience-section {
-            background: #f8fafc;
-        }
-        
-        .timeline {
-            max-width: 950px;
-            margin: 70px auto 0;
-        }
-        
-        .timeline-item {
-            background: white;
-            padding: 44px;
-            border-radius: 20px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-            margin-bottom: 36px;
-            border-left: 5px solid #3b82f6;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: fadeInUp 0.8s ease-out backwards;
-            border: 2px solid #e2e8f0;
-            border-left: 5px solid #3b82f6;
-        }
-        
-        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
-        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
-        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
-        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
-        
-        .timeline-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
-            border-color: #3b82f6;
-        }
-        
-        .timeline-item h3 {
-            font-size: 1.7em;
-            color: #3b82f6;
-            margin-bottom: 10px;
-            font-weight: 800;
-        }
-        
-        .timeline-company {
-            font-size: 1.3em;
-            color: #1e293b;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .timeline-period {
-            color: #64748b;
-            font-size: 1em;
-            margin-bottom: 28px;
-            font-weight: 600;
-        }
-        
-        .achievement {
-            margin-bottom: 18px;
-            padding: 18px;
-            background: #f8fafc;
-            border-radius: 12px;
-            color: #1e293b;
-            line-height: 1.8;
-            font-size: 1.05em;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-        
-        .achievement:hover {
-            background: #f1f5f9;
-            transform: translateX(6px);
-        }
-        
-        .achievement strong {
-            color: #3b82f6;
-            font-weight: 800;
-        }
-        
-        /* Education Section */
-        .education-section {
-            background: white;
-        }
-        
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-            gap: 36px;
-            max-width: 1100px;
-            margin: 70px auto 0;
-        }
-        
-        .education-card {
-            background: white;
-            padding: 44px;
-            border-radius: 20px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-            border: 2px solid #e2e8f0;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
-        .education-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
-            border-color: #3b82f6;
-        }
-        
-        .education-card h3 {
-            font-size: 1.6em;
-            color: #3b82f6;
-            margin-bottom: 12px;
-            font-weight: 800;
-        }
-        
-        .education-card .institution {
-            font-size: 1.3em;
-            color: #1e293b;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .education-card .period {
-            color: #64748b;
-            font-size: 1em;
-            margin-bottom: 24px;
-            font-weight: 600;
-        }
-        
-        .education-card .highlight {
-            color: #475569;
-            line-height: 1.8;
-            padding: 16px;
-            background: #f8fafc;
-            border-radius: 12px;
-            margin-top: 16px;
-            font-size: 1em;
-            font-weight: 600;
-        }
-        
-        .education-card .coursework {
-            margin-top: 20px;
-        }
-        
-        .education-card .coursework-title {
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 12px;
-            font-size: 1.05em;
-        }
-        
-        .education-card .coursework-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        
-        .coursework-tag {
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 700;
-        }
-        
-        /* CTA Section */
-        .cta {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-            color: white;
-            padding: 110px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            border-top: 4px solid #3b82f6;
-        }
-        
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
-            animation: pulse 8s ease-in-out infinite;
-        }
-        
-        .cta-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .cta h2 {
-            color: white;
-            font-size: 2.8em;
-            margin-bottom: 24px;
-            font-weight: 900;
-        }
-        
-        .cta p {
-            font-size: 1.4em;
-            margin-bottom: 48px;
-            opacity: 0.95;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 20px 56px;
-            background: #3b82f6;
-            color: white;
-            text-decoration: none;
-            border-radius: 14px;
-            font-weight: 800;
-            font-size: 1.2em;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .btn:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 24px 64px rgba(59, 130, 246, 0.4);
-            background: #2563eb;
-        }
-        
-        /* Footer */
-        footer {
-            background: #0f172a;
-            color: white;
-            padding: 48px 20px;
-            text-align: center;
-        }
-        
-        footer p {
-            opacity: 0.8;
-            margin-bottom: 10px;
-            font-size: 1.05em;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5em;
-            }
-            
-            .hero .tagline {
-                font-size: 1.4em;
-            }
-            
-            .hero .subtitle {
-                font-size: 1.1em;
-            }
-            
-            section h2 {
-                font-size: 2.2em;
-            }
-            
-            .projects-grid,
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .education-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                gap: 14px;
-            }
-        }
-    </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Harish Thota — Data Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#F7F5F0;--cream2:#EFEDE7;--white:#FFFFFF;
+  --ink:#1C1917;--ink2:#44403C;--ink3:#78716C;--ink4:#A8A29E;
+  --amber:#D97706;--amber-bg:#FEF3C7;--amber-border:#FDE68A;
+  --teal:#0F766E;--teal-bg:#F0FDFA;--teal-border:#99F6E4;
+  --red:#B91C1C;--red-bg:#FEF2F2;--red-border:#FECACA;
+  --border:#E5E1DA;--border2:#D6D0C8;
+  --ff-display:'Playfair Display',Georgia,serif;
+  --ff-body:'DM Sans',system-ui,sans-serif;
+  --ff-mono:'IBM Plex Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--ff-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(--border2)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 4rem;background:rgba(247,245,240,0.93);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--ff-mono);font-size:0.75rem;color:var(--ink3);letter-spacing:0.08em}
+.nav-logo span{color:var(--amber);font-weight:500}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.82rem;color:var(--ink2);text-decoration:none;font-weight:500;transition:color 0.15s}
+.nav-links a:hover{color:var(--ink)}
+.nav-hire{display:inline-flex;align-items:center;gap:0.4rem;background:var(--ink);color:var(--white);font-size:0.78rem;font-weight:600;padding:0.5rem 1.1rem;border-radius:4px;text-decoration:none;transition:background 0.15s}
+.nav-hire:hover{background:var(--amber)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;max-width:1100px;margin:0 auto;padding:7rem 4rem 5rem;position:relative}
+.hero-available{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--ff-mono);font-size:0.7rem;color:var(--teal);background:var(--teal-bg);border:1px solid var(--teal-border);padding:0.3rem 0.85rem;border-radius:100px;margin-bottom:2.5rem;letter-spacing:0.04em;animation:fadeUp 0.5s ease both}
+.pulse{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.75)}}
+.hero-statement{font-family:var(--ff-display);font-size:clamp(2.8rem,6.5vw,5.5rem);font-weight:900;line-height:1.0;letter-spacing:-0.03em;color:var(--ink);max-width:820px;margin-bottom:2rem;animation:fadeUp 0.5s 0.1s ease both}
+.hero-statement em{font-style:italic;color:var(--amber)}
+.hero-sub{font-size:1.05rem;color:var(--ink2);line-height:1.8;max-width:560px;margin-bottom:3rem;animation:fadeUp 0.5s 0.2s ease both}
+.hero-sub strong{color:var(--ink);font-weight:600}
+.hero-actions-row{display:flex;align-items:center;gap:3rem;flex-wrap:wrap;animation:fadeUp 0.5s 0.3s ease both}
+.hero-btns{display:flex;gap:0.75rem;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:0.5rem;background:var(--ink);color:var(--white);font-size:0.85rem;font-weight:600;padding:0.75rem 1.5rem;border-radius:5px;text-decoration:none;transition:all 0.15s}
+.btn-primary:hover{background:var(--amber);transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:0.5rem;border:1.5px solid var(--border2);color:var(--ink2);font-size:0.85rem;font-weight:500;padding:0.75rem 1.5rem;border-radius:5px;text-decoration:none;transition:all 0.15s}
+.btn-ghost:hover{border-color:var(--ink);color:var(--ink)}
+.btn-amber{display:inline-flex;align-items:center;gap:0.5rem;background:var(--amber);color:var(--white);font-size:0.82rem;font-weight:600;padding:0.65rem 1.35rem;border-radius:5px;text-decoration:none;transition:all 0.15s}
+.btn-amber:hover{background:#B45309;transform:translateY(-1px)}
+.hero-meta{display:flex;gap:2.5rem}
+.hero-meta-num{font-family:var(--ff-display);font-size:2rem;font-weight:700;color:var(--ink);line-height:1}
+.hero-meta-num span{color:var(--amber)}
+.hero-meta-label{font-size:0.73rem;color:var(--ink3);margin-top:0.2rem}
+
+/* RECRUITER PACK BANNER */
+.pack-banner{background:var(--amber-bg);border:1px solid var(--amber-border);border-left:3px solid var(--amber);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;margin-top:3rem;border-radius:4px;animation:fadeUp 0.5s 0.4s ease both}
+.pack-text{font-size:0.88rem;color:#92400E;line-height:1.5}
+.pack-text strong{font-weight:600}
+.pack-btns{display:flex;gap:0.6rem;flex-wrap:wrap}
+.pack-btn{display:inline-flex;align-items:center;gap:0.4rem;background:var(--amber);color:var(--white);font-family:var(--ff-mono);font-size:0.72rem;font-weight:500;padding:0.5rem 1rem;border-radius:4px;text-decoration:none;white-space:nowrap;transition:background 0.15s}
+.pack-btn:hover{background:#B45309}
+.pack-btn.outline{background:transparent;border:1px solid var(--amber);color:var(--amber)}
+.pack-btn.outline:hover{background:var(--amber);color:white}
+
+/* RULE */
+.full-rule{border:none;border-top:1px solid var(--border);margin:0}
+
+/* SECTION BASE */
+.section{max-width:1100px;margin:0 auto;padding:5.5rem 4rem}
+.eyebrow{font-family:var(--ff-mono);font-size:0.67rem;color:var(--ink3);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.6rem}
+.section-h{font-family:var(--ff-display);font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-0.025em;line-height:1.05;margin-bottom:1rem}
+.section-lead{font-size:0.97rem;color:var(--ink2);line-height:1.8;max-width:580px;margin-bottom:3.5rem}
+
+/* WHY SECTION */
+.why-bg{background:var(--ink);border-top:3px solid var(--amber)}
+.why-inner{max-width:1100px;margin:0 auto;padding:5.5rem 4rem}
+.why-eyebrow{font-family:var(--ff-mono);font-size:0.67rem;color:rgba(255,255,255,0.4);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.7rem}
+.why-h{font-family:var(--ff-display);font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-0.025em;line-height:1.05;color:var(--white);margin-bottom:0.85rem}
+.why-h em{color:var(--amber);font-style:italic}
+.why-lead{font-size:0.97rem;color:rgba(255,255,255,0.55);line-height:1.8;max-width:580px;margin-bottom:3.5rem}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.why-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-top:2px solid var(--amber);padding:1.75rem;border-radius:2px}
+.why-card-num{font-family:var(--ff-mono);font-size:0.62rem;color:var(--amber);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem}
+.why-card-title{font-family:var(--ff-display);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:0.75rem;line-height:1.25}
+.why-card-body{font-size:0.85rem;color:rgba(255,255,255,0.55);line-height:1.75}
+.why-card-body strong{color:rgba(255,255,255,0.85);font-weight:500}
+
+/* STACK */
+.stack-bg{background:var(--cream2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stack-row-item{display:grid;grid-template-columns:180px 1fr;padding:1.1rem 0;border-bottom:1px solid var(--border);align-items:center;gap:2rem}
+.stack-row-item:last-child{border-bottom:none}
+.stack-cat-name{font-family:var(--ff-mono);font-size:0.65rem;color:var(--ink3);letter-spacing:0.1em;text-transform:uppercase}
+.stack-chips{display:flex;flex-wrap:wrap;gap:0.4rem}
+.chip{font-family:var(--ff-mono);font-size:0.7rem;padding:0.3rem 0.75rem;border-radius:3px;border:1px solid var(--border2);background:var(--white);color:var(--ink2)}
+.chip.core{background:var(--amber-bg);border-color:var(--amber-border);color:#92400E;font-weight:500}
+
+/* CODE SAMPLES */
+.code-samples-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.code-block{background:#1a1917;border-radius:6px;overflow:hidden;border:1px solid #333}
+.code-block-header{background:#252320;padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #333}
+.code-filename{font-family:var(--ff-mono);font-size:0.7rem;color:#9a9690}
+.code-lang{font-family:var(--ff-mono);font-size:0.62rem;color:var(--amber)}
+.code-block pre{padding:1.25rem;overflow-x:auto;font-family:var(--ff-mono);font-size:0.78rem;line-height:1.65;color:#e8e4dd}
+.kw{color:#c792ea}.fn{color:#82aaff}.st{color:#c3e88d}.cm{color:#546E7A;font-style:italic}.nu{color:#F78C6C}.op{color:#89DDFF}
+.code-caption{font-size:0.8rem;color:var(--ink3);margin-top:0.75rem;line-height:1.5}
+
+/* CASE STUDY CARDS */
+.case-cards{display:grid;grid-template-columns:1fr;gap:2rem}
+.case-card{
+  display:grid;grid-template-columns:1fr 320px;
+  border:1px solid var(--border);border-radius:6px;overflow:hidden;
+  background:var(--white);
+  opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;
+}
+.case-card.vis{opacity:1;transform:none}
+.case-card:hover{box-shadow:0 4px 24px rgba(0,0,0,0.07)}
+.case-card-body{padding:2rem}
+.case-card-idx{font-family:var(--ff-mono);font-size:0.62rem;color:var(--ink4);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem}
+.case-card-co{font-size:0.82rem;color:var(--ink3);margin-bottom:0.15rem}
+.case-card-title{font-family:var(--ff-display);font-size:1.35rem;font-weight:700;line-height:1.25;color:var(--ink);margin-bottom:1rem}
+.case-card-lead{font-size:0.88rem;color:var(--ink2);line-height:1.7;margin-bottom:1.25rem;max-width:480px}
+.case-card-tags{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:1.5rem}
+.case-tag{font-family:var(--ff-mono);font-size:0.6rem;padding:0.2rem 0.5rem;border-radius:2px;border:1px solid var(--border);background:var(--cream2);color:var(--ink3)}
+.case-card-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.83rem;font-weight:600;color:var(--amber);text-decoration:none;transition:gap 0.15s}
+.case-card-link:hover{gap:0.6rem}
+
+/* Architecture preview panel */
+.case-card-arch{
+  background:var(--cream2);border-left:1px solid var(--border);
+  padding:1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:0.75rem;
+}
+.arch-label{font-family:var(--ff-mono);font-size:0.6rem;color:var(--ink3);letter-spacing:0.1em;text-transform:uppercase;text-align:center}
+
+/* Mini metric strip */
+.case-metrics-strip{display:flex;gap:1rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.case-metric{padding:0.5rem 0.85rem;border-radius:4px}
+.case-metric.amber{background:var(--amber-bg);border:1px solid var(--amber-border)}
+.case-metric.teal{background:var(--teal-bg);border:1px solid var(--teal-border)}
+.case-metric-num{font-family:var(--ff-display);font-size:1.25rem;font-weight:700;line-height:1}
+.amber .case-metric-num{color:var(--amber)}
+.teal .case-metric-num{color:var(--teal)}
+.case-metric-label{font-size:0.68rem;color:var(--ink3);margin-top:0.15rem}
+
+/* EXPERIENCE */
+.exp-rows{display:flex;flex-direction:column}
+.exp-row{display:grid;grid-template-columns:200px 1fr;padding:2rem 0;border-top:1px solid var(--border);gap:4rem;align-items:start;opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease}
+.exp-row:first-child{border-top:none;padding-top:0}
+.exp-row.vis{opacity:1;transform:none}
+.exp-period{font-family:var(--ff-mono);font-size:0.72rem;color:var(--ink3);margin-bottom:0.3rem}
+.exp-win{display:inline-flex;align-items:center;gap:0.35rem;font-family:var(--ff-mono);font-size:0.62rem;color:var(--teal);background:var(--teal-bg);border:1px solid var(--teal-border);padding:0.2rem 0.6rem;border-radius:100px;margin-top:0.35rem}
+.exp-co{font-family:var(--ff-mono);font-size:0.67rem;color:var(--ink3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.3rem}
+.exp-role{font-family:var(--ff-display);font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:0.5rem}
+.exp-highlight{font-family:var(--ff-mono);font-size:0.7rem;color:var(--amber);background:var(--amber-bg);border:1px solid var(--amber-border);padding:0.25rem 0.7rem;border-radius:100px;display:inline-flex;align-items:center;gap:0.35rem;margin-bottom:0.85rem}
+.exp-desc{font-size:0.88rem;color:var(--ink2);line-height:1.75;margin-bottom:1rem;max-width:520px}
+.exp-tags{display:flex;flex-wrap:wrap;gap:0.3rem}
+.exp-tag{font-family:var(--ff-mono);font-size:0.6rem;padding:0.2rem 0.5rem;border-radius:2px;border:1px solid var(--border);background:var(--cream2);color:var(--ink3)}
+
+/* EDU */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem}
+.edu-card{background:var(--white);border:1px solid var(--border);border-radius:5px;padding:1.5rem}
+.edu-deg{font-weight:600;font-size:0.93rem;margin-bottom:0.2rem}
+.edu-uni{font-size:0.84rem;color:var(--ink2);margin-bottom:0.5rem}
+.edu-meta{font-family:var(--ff-mono);font-size:0.68rem;color:var(--amber)}
+
+/* CONTACT */
+.contact-bg{background:var(--ink)}
+.contact-inner{max-width:1100px;margin:0 auto;padding:6rem 4rem;display:grid;grid-template-columns:1fr 320px;gap:5rem;align-items:start}
+.c-eyebrow{font-family:var(--ff-mono);font-size:0.67rem;color:rgba(255,255,255,0.35);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.75rem}
+.c-title{font-family:var(--ff-display);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;letter-spacing:-0.03em;line-height:1.0;color:var(--white);margin-bottom:1.25rem}
+.c-title em{color:var(--amber);font-style:italic}
+.c-body{font-size:0.95rem;color:rgba(255,255,255,0.5);line-height:1.8;max-width:400px;margin-bottom:2.5rem}
+.c-links{display:flex;flex-direction:column;gap:0.6rem}
+.c-link{display:flex;align-items:center;gap:0.85rem;padding:0.85rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:5px;text-decoration:none;transition:background 0.15s,transform 0.15s}
+.c-link:hover{background:rgba(255,255,255,0.09);transform:translateX(3px)}
+.c-link-icon{width:34px;height:34px;background:rgba(255,255,255,0.08);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;color:rgba(255,255,255,0.7);flex-shrink:0}
+.c-link-lbl{font-family:var(--ff-mono);font-size:0.6rem;color:rgba(255,255,255,0.35);letter-spacing:0.08em;text-transform:uppercase}
+.c-link-val{font-size:0.85rem;color:rgba(255,255,255,0.9);margin-top:0.1rem}
+.avail{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;overflow:hidden}
+.avail-header{padding:0.85rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;gap:0.5rem;font-family:var(--ff-mono);font-size:0.62rem;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase}
+.avail-dot{width:6px;height:6px;background:#4ade80;border-radius:50%;animation:pulse 2s infinite}
+.avail-row{display:flex;justify-content:space-between;align-items:center;padding:0.8rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.82rem}
+.avail-row:last-child{border-bottom:none}
+.avail-k{color:rgba(255,255,255,0.38)}
+.avail-v{font-family:var(--ff-mono);font-size:0.76rem;color:rgba(255,255,255,0.85);text-align:right}
+.avail-v.green{color:#4ade80}.avail-v.amber{color:#FBBF24}
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.07);padding:1.25rem 4rem;display:flex;justify-content:space-between}
+.ft{font-family:var(--ff-mono);font-size:0.6rem;color:rgba(255,255,255,0.22);letter-spacing:0.06em}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media(max-width:900px){
+  nav{padding:0 1.5rem}.nav-links{display:none}
+  .hero{padding:7rem 1.5rem 4rem;min-height:auto}
+  .section{padding:4rem 1.5rem}
+  .why-inner{padding:4rem 1.5rem}.why-grid{grid-template-columns:1fr}
+  .stack-row-item{grid-template-columns:1fr;gap:0.75rem}
+  .case-card{grid-template-columns:1fr}.case-card-arch{border-left:none;border-top:1px solid var(--border)}
+  .code-samples-grid{grid-template-columns:1fr}
+  .exp-row{grid-template-columns:1fr;gap:0.75rem;padding:2rem 0}
+  .edu-grid{grid-template-columns:1fr}
+  .contact-inner{grid-template-columns:1fr;gap:3rem;padding:4rem 1.5rem}
+  .hero-actions-row{flex-direction:column;gap:1.5rem}
+  footer{padding:1.25rem 1.5rem;flex-direction:column;gap:0.4rem}
+}
+</style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Harish Thota</h1>
-                <div class="tagline">Data & BI Analyst</div>
-                <div class="subtitle">
-                    I fix data that nobody trusts and build platforms that help teams make confident decisions
-                </div>
-                <div class="contact-info">
-                    <a href="mailto:harishthota001@gmail.com">📧 Email</a>
-                    <a href="tel:0459182404">📱 0459 182 404</a>
-                    <a href="https://linkedin.com/in/harish-thota-ds" target="_blank">💼 LinkedIn</a>
-                    <span>📍 Adelaide, SA</span>
-                </div>
-            </div>
+
+<nav>
+  <div class="nav-logo">HT<span> / data engineer</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#why">Why Harish</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#code">Code</a></li>
+    <li><a href="#work">Case Studies</a></li>
+    <li><a href="#experience">Experience</a></li>
+  </ul>
+  <a href="mailto:harishthota001@gmail.com" class="nav-hire">Hire me →</a>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="about" class="hero">
+  <div class="hero-available"><span class="pulse"></span>Open to Data Engineer roles · Australia</div>
+  <h1 class="hero-statement">Data breaks.<br/><em>I stop it before</em><br/>anyone notices.</h1>
+  <p class="hero-sub">
+    I'm Harish Thota — a Data Engineer with <strong>4+ years of experience</strong> including <strong>2.5 years in Australia</strong>, building batch pipelines on Azure, Databricks, and Microsoft Fabric. I don't just move data. I make sure the right data reaches the right people — correctly, every time.
+  </p>
+  <div class="hero-actions-row">
+    <div class="hero-btns">
+      <a href="#work" class="btn-primary">View case studies ↓</a>
+      <a href="#contact" class="btn-ghost">Get in touch</a>
+    </div>
+    <div class="hero-meta">
+      <div>
+        <div class="hero-meta-num">600<span>k+</span></div>
+        <div class="hero-meta-label">Records in production pipelines</div>
+      </div>
+      <div>
+        <div class="hero-meta-num"><span>–</span>40<span>%</span></div>
+        <div class="hero-meta-label">Reporting disputes eliminated</div>
+      </div>
+      <div>
+        <div class="hero-meta-num">3<span>d→1</span></div>
+        <div class="hero-meta-label">Month-end close, Databricks</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECRUITER PACK BANNER -->
+  <div class="pack-banner">
+    <div class="pack-text"><strong>Recruiter? Save time.</strong> Download my resume or full case study pack — everything you need in one click.</div>
+    <div class="pack-btns">
+      <a href="mailto:harishthota001@gmail.com?subject=Resume Request - Harish Thota" class="pack-btn">⬇ Request Resume PDF</a>
+      <a href="#work" class="pack-btn outline">📄 View Case Study Pack</a>
+    </div>
+  </div>
+</section>
+
+<hr class="full-rule"/>
+
+<!-- ─── WHY HARISH ─── -->
+<div class="why-bg" id="why">
+  <div class="why-inner">
+    <div class="why-eyebrow">Why hire me</div>
+    <h2 class="why-h">Most engineers fix data.<br/><em>I prevent the problem.</em></h2>
+    <p class="why-lead">Three things that separate my work from a standard engineering CV — in plain terms, not buzzwords.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-num">01 / Outcome-first</div>
+        <div class="why-card-title">Every pipeline tied to a measurable business result</div>
+        <div class="why-card-body">I don't hand over a completed pipeline and move on. Each system I've built came with a <strong>specific number attached</strong> — 40% fewer disputes, 3-day close reduced to 1, zero incorrect payment runs. Engineering decisions trace back to operational impact.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-card-num">02 / Validation-first</div>
+        <div class="why-card-title">I build the quality layer most engineers skip</div>
+        <div class="why-card-body">Across three roles, I've built <strong>12-check gate suites, 20-query reconciliation sets, and rules engines with 22+ categories</strong>. Bad rows never reach stakeholders because the pipeline hard-stops before they can.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-card-num">03 / Production-grade</div>
+        <div class="why-card-title">Medallion architecture, CI/CD, Delta Lake — in live production</div>
+        <div class="why-card-body">My work lives in production, not in a tutorial. <strong>Watermark-based incremental merges, schema-gated deployments via Azure DevOps, dbt-compatible modular layers</strong> — systems I own and maintain daily.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── STACK ─── -->
+<div class="stack-bg" id="stack">
+  <div class="section">
+    <div class="eyebrow">Technical Stack</div>
+    <h2 class="section-h">What I build with</h2>
+    <p class="section-lead">Every tool listed here has been used in a production system — not a tutorial, not a side project.</p>
+    <div>
+      <div class="stack-row-item">
+        <div class="stack-cat-name">Cloud & Orchestration</div>
+        <div class="stack-chips">
+          <span class="chip core">Azure Data Factory</span><span class="chip core">Microsoft Fabric</span>
+          <span class="chip core">Databricks</span><span class="chip core">Azure Synapse</span>
+          <span class="chip">Azure DevOps</span><span class="chip">Snowflake</span>
         </div>
+      </div>
+      <div class="stack-row-item">
+        <div class="stack-cat-name">Languages</div>
+        <div class="stack-chips">
+          <span class="chip core">Python</span><span class="chip core">T-SQL / SQL</span>
+          <span class="chip core">PySpark</span><span class="chip">dbt</span>
+          <span class="chip">Spark SQL</span><span class="chip">DAX</span>
+        </div>
+      </div>
+      <div class="stack-row-item">
+        <div class="stack-cat-name">Architecture</div>
+        <div class="stack-chips">
+          <span class="chip core">Delta Lake</span><span class="chip core">Medallion Architecture</span>
+          <span class="chip">Lakehouse</span><span class="chip">Star Schema</span><span class="chip">Dimensional Modelling</span>
+        </div>
+      </div>
+      <div class="stack-row-item">
+        <div class="stack-cat-name">BI & DevOps</div>
+        <div class="stack-chips">
+          <span class="chip core">Power BI</span><span class="chip core">CI/CD</span>
+          <span class="chip core">Git</span><span class="chip">Drill-through Reporting</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="full-rule"/>
+
+<!-- ─── CODE SAMPLES ─── -->
+<div id="code" class="section">
+  <div class="eyebrow">Code Samples</div>
+  <h2 class="section-h">How I write it</h2>
+  <p class="section-lead">Anonymised snippets from real production pipelines — showing the quality-gate and transformation patterns I apply across every project.</p>
+
+  <div class="code-samples-grid">
+
+    <!-- Sample 1: Watermark Incremental Merge -->
+    <div>
+      <div class="code-block">
+        <div class="code-block-header">
+          <span class="code-filename">incremental_merge.py</span>
+          <span class="code-lang">PySpark · ADF Notebook</span>
+        </div>
+        <pre><span class="cm"># Watermark-based incremental merge into Delta table</span>
+<span class="cm"># Pattern used across 5 ADF pipelines @ Grad Careers</span>
+
+<span class="kw">def</span> <span class="fn">run_incremental_merge</span>(spark, config):
+    watermark <span class="op">=</span> <span class="fn">get_last_watermark</span>(
+        config[<span class="st">"watermark_table"</span>],
+        config[<span class="st">"pipeline_name"</span>]
+    )
+
+    <span class="cm"># Pull only rows changed since last run</span>
+    new_rows <span class="op">=</span> spark.read.jdbc(
+        url<span class="op">=</span>config[<span class="st">"source_jdbc"</span>],
+        table<span class="op">=</span>config[<span class="st">"source_table"</span>],
+        properties<span class="op">=</span>config[<span class="st">"jdbc_props"</span>]
+    ).filter(
+        F.col(<span class="st">"modified_date"</span>) <span class="op">></span> watermark
+    )
+
+    row_count <span class="op">=</span> new_rows.count()
+    <span class="kw">if</span> row_count <span class="op">==</span> <span class="nu">0</span>:
+        <span class="fn">log</span>(<span class="st">"No new rows — skipping merge"</span>)
+        <span class="kw">return</span>
+
+    <span class="cm"># Merge into Delta (upsert, not overwrite)</span>
+    delta_table <span class="op">=</span> DeltaTable.forPath(
+        spark, config[<span class="st">"delta_path"</span>]
+    )
+    delta_table.alias(<span class="st">"tgt"</span>).merge(
+        new_rows.alias(<span class="st">"src"</span>),
+        <span class="st">"tgt.id = src.id"</span>
+    ).whenMatchedUpdateAll(
+    ).whenNotMatchedInsertAll(
+    ).execute()
+
+    <span class="fn">update_watermark</span>(config, new_watermark<span class="op">=</span>
+        new_rows.agg(F.max(<span class="st">"modified_date"</span>)).collect()[<span class="nu">0</span>][<span class="nu">0</span>]
+    )
+    <span class="fn">log</span>(<span class="st">f"Merged </span>{row_count}<span class="st"> rows successfully"</span>)</pre>
+      </div>
+      <p class="code-caption">Eliminates full daily reloads. Reruns only touch affected date windows — cutting compute and preventing cascade failures on partial source outages.</p>
     </div>
 
-    <!-- Stats Section -->
-    <div class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Years Analytics & BI Experience</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">Production Platforms Built</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">99%</div>
-                    <div class="stat-label">Average Platform Uptime</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">100+</div>
-                    <div class="stat-label">Business Users Supported</div>
-                </div>
-            </div>
+    <!-- Sample 2: Quality Gate Suite -->
+    <div>
+      <div class="code-block">
+        <div class="code-block-header">
+          <span class="code-filename">quality_gate.py</span>
+          <span class="code-lang">Python · Fabric Notebook</span>
         </div>
+        <pre><span class="cm"># 12-check quality gate — blocks refresh on any failure</span>
+<span class="cm"># Applied after every Silver layer write</span>
+
+CHECKS <span class="op">=</span> [
+  (<span class="st">"row_count_nonzero"</span>,   <span class="kw">lambda</span> df: df.count() <span class="op">></span> <span class="nu">0</span>),
+  (<span class="st">"no_null_booking_id"</span>,  <span class="kw">lambda</span> df: df.filter(
+      F.col(<span class="st">"booking_id"</span>).isNull()).count() <span class="op">==</span> <span class="nu">0</span>),
+  (<span class="st">"pk_uniqueness"</span>,       <span class="kw">lambda</span> df: df.count() <span class="op">==</span>
+      df.select(<span class="st">"booking_id"</span>).distinct().count()),
+  (<span class="st">"timestamp_valid"</span>,     <span class="kw">lambda</span> df: df.filter(
+      F.col(<span class="st">"start_ts"</span>) <span class="op">></span> F.col(<span class="st">"end_ts"</span>)).count() <span class="op">==</span> <span class="nu">0</span>),
+  (<span class="st">"row_tie_out"</span>,         <span class="kw">lambda</span> df: <span class="fn">source_count</span>() <span class="op">==</span>
+      df.count()),
+  <span class="cm"># ... 7 additional checks</span>
+]
+
+<span class="kw">def</span> <span class="fn">run_quality_gate</span>(df, pipeline_name):
+    failures <span class="op">=</span> []
+    <span class="kw">for</span> check_name, check_fn <span class="kw">in</span> CHECKS:
+        <span class="kw">try</span>:
+            passed <span class="op">=</span> <span class="fn">check_fn</span>(df)
+        <span class="kw">except</span> Exception <span class="kw">as</span> e:
+            passed <span class="op">=</span> <span class="nu">False</span>
+        <span class="kw">if not</span> passed:
+            failures.append(check_name)
+
+    <span class="kw">if</span> failures:
+        <span class="fn">log_failure</span>(pipeline_name, failures)
+        <span class="kw">raise</span> <span class="fn">PipelineQualityError</span>(
+            <span class="st">f"BLOCKED: {len(failures)} check(s) failed"</span>
+        )
+    <span class="fn">log</span>(<span class="st">"All 12 checks passed ✓"</span>)</pre>
+      </div>
+      <p class="code-caption">Hard-stops the pipeline on any single failure. Stakeholders never see a partial or corrupted refresh — the dashboard simply doesn't update until data is clean.</p>
     </div>
 
-    <!-- Featured Projects -->
-    <section style="background: white;">
-        <div class="container">
-            <h2>What I've Built</h2>
-            <div class="section-subtitle">Real business problems I've solved with data</div>
-            
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🚀</div>
-                        <h3>Real-Time Decision Platform</h3>
-                        <div class="project-meta">Grad Careers | Current Role</div>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-description">
-                            Managers were making staffing decisions using 2-day-old Excel files with thousands of errors. I built a new platform that shows them real-time data they can actually trust.
-                        </div>
-                        <div class="impact-grid">
-                            <div class="impact-item">
-                                <span class="impact-icon">✓</span>
-                                <span class="impact-text"><strong>Forecasts went from 65% to 90% accurate</strong> so managers can finally plan properly</span>
-                            </div>
-                            <div class="impact-item">
-                                <span class="impact-icon">✓</span>
-                                <span class="impact-text"><strong>Finance and operations stopped arguing</strong> so disputes dropped from 15-20 to 3-5 per week</span>
-                            </div>
-                            <div class="impact-item">
-                                <span class="impact-icon">✓</span>
-                                <span class="impact-text"><strong>Fixed 4,000+ data errors</strong> affecting 200,000+ booking records</span>
-                            </div>
-                        </div>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Microsoft Fabric</span>
-                            <span class="tech-tag">Power BI</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">SQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🛡️</div>
-                        <h3>Automated Compliance System</h3>
-                        <div class="project-meta">AIML | 1 Year</div>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-description">
-                            Analysts were spending 40+ hours every month manually checking $42M in transactions for compliance problems. I built a system that catches issues automatically.
-                        </div>
-                        <div class="impact-grid">
-                            <div class="impact-item">
-                                <span class="impact-icon">✓</span>
-                                <span class="impact-text"><strong>Cut manual work from 40+ hours to under 2</strong> so analysts got their time back</span>
-                            </div>
-                            <div class="impact-item">
-                                <span class="impact-icon">✓</span>
-                                <span class="impact-text"><strong>Prevented 1,200+ compliance violations</strong> before auditors could find them</span>
-                            </div>
-                            <div class="impact-item">
-                                <span class="impact-icon">✓</span>
-                                <span class="impact-text"><strong>Made problem-solving 82% faster</strong> so resolution time from 45 min to 8 min</span>
-                            </div>
-                        </div>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Databricks</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PySpark</span>
-                            <span class="tech-tag">Power BI</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">📊</div>
-                        <h3>Supplier Performance Dashboards</h3>
-                        <div class="project-meta">Hyundai Mobis | 3 Years</div>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-description">
-                            Teams were spending days manually checking supplier deliveries and couldn't solve problems until it was too late. I built dashboards that show issues immediately.
-                        </div>
-                        <div class="impact-grid">
-                            <div class="impact-item">
-                                <span class="impact-icon">✓</span>
-                                <span class="impact-text"><strong>Suppliers improved from 72% to 89% on-time</strong> so production ran smoother</span>
-                            </div>
-                            <div class="impact-item">
-                                <span class="impact-icon">✓</span>
-                                <span class="impact-text"><strong>Problem-solving sped up 87%</strong> so from 2 days down to 4 hours</span>
-                            </div>
-                            <div class="impact-item">
-                                <span class="impact-icon">✓</span>
-                                <span class="impact-text"><strong>Eliminated 8+ hours of weekly manual checking</strong> for the team</span>
-                            </div>
-                        </div>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Power BI</span>
-                            <span class="tech-tag">Azure SQL</span>
-                            <span class="tech-tag">Excel</span>
-                            <span class="tech-tag">Power Apps</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Sample 3: PySpark Conformed Layer -->
+    <div>
+      <div class="code-block">
+        <div class="code-block-header">
+          <span class="code-filename">conformed_layer.py</span>
+          <span class="code-lang">PySpark · Databricks</span>
         </div>
-    </section>
+        <pre><span class="cm"># Conformed layer: 3 source systems → single Delta table</span>
+<span class="cm"># 137k+ finance transactions @ AIML</span>
 
-    <!-- Skills -->
-    <section style="background: #f8fafc;">
-        <div class="container">
-            <h2>My Toolkit</h2>
-            <div class="section-subtitle">The tools I use to solve business problems</div>
-            
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">📊</div>
-                    <h3>Analytics & Reporting Tools</h3>
-                    <ul class="skill-list">
-                        <li>Excel (advanced formulas, pivot tables, data modeling)</li>
-                        <li>Tableau (interactive dashboards, visual analytics)</li>
-                        <li>Power BI (end-to-end reporting, DAX, custom visuals)</li>
-                        <li>SQL (querying, joins, optimization, stored procedures)</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">☁️</div>
-                    <h3>Cloud Data Platforms</h3>
-                    <ul class="skill-list">
-                        <li>Microsoft Fabric (lakehouse, warehouse, pipelines)</li>
-                        <li>Databricks (PySpark, Delta Lake, notebooks)</li>
-                        <li>Azure (SQL Database, Synapse, Data Factory)</li>
-                        <li>Building platforms from scratch or improving existing ones</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">💻</div>
-                    <h3>Programming & Automation</h3>
-                    <ul class="skill-list">
-                        <li>Python (data cleaning, automation, validation)</li>
-                        <li>R (statistical analysis, data manipulation)</li>
-                        <li>PySpark (big data processing, transformations)</li>
-                        <li>Power Automate (workflow automation, alerts)</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">🏭</div>
-                    <h3>Industry Experience</h3>
-                    <ul class="skill-list">
-                        <li><strong>Manufacturing & Supply Chain</strong><br>3 years at Hyundai Mobis building BI dashboards for automotive procurement and warehouse operations. Tracked 200+ suppliers, improved on-time delivery 72% to 89%, reduced issue resolution from 2 days to 4 hours.</li>
-                        <li><strong>Healthcare Compliance</strong><br>1 year at AIML automating compliance checks for $42M research funding. Built Databricks platform preventing 1,200+ violations annually, maintained 99.2% uptime for audit teams.</li>
-                        <li><strong>Graduate Career Services</strong><br>Current role at Grad Careers delivering Microsoft Fabric platform for session booking analytics. Improved forecast accuracy 65% to 90%, ended 18-month finance operations dispute.</li>
-                        <li><strong>Finance & Payroll</strong><br>7 months at OESON Global building payroll analytics protecting 450+ employees. Created Azure Synapse pipelines catching 3,000+ anomalies before payment runs, achieved 100% on-time delivery.</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">🎯</div>
-                    <h3>What Makes Me Effective</h3>
-                    <ul class="skill-list">
-                        <li>I speak both "tech" and "business" so can translate between teams</li>
-                        <li>I fix root causes, not symptoms so problems stay solved</li>
-                        <li>I build systems people actually use so 99% uptime track record</li>
-                        <li>I make data trustworthy so teams stop arguing about numbers</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<span class="kw">def</span> <span class="fn">build_conformed_transactions</span>(spark):
+    <span class="cm"># Normalise each source to canonical schema</span>
+    src_a <span class="op">=</span> <span class="fn">read_source_a</span>(spark).transform(<span class="fn">normalise_a</span>)
+    src_b <span class="op">=</span> <span class="fn">read_source_b</span>(spark).transform(<span class="fn">normalise_b</span>)
+    src_c <span class="op">=</span> <span class="fn">read_source_c</span>(spark).transform(<span class="fn">normalise_c</span>)
 
-    <!-- Experience -->
-    <section class="experience-section">
-        <div class="container">
-            <h2>My Journey</h2>
-            <div class="section-subtitle">Where I've worked and what I've delivered</div>
-            
-            <div class="timeline">
-                <!-- Current Role -->
-                <div class="timeline-item">
-                    <h3>IT Data Analyst</h3>
-                    <div class="timeline-company">Grad Careers</div>
-                    <div class="timeline-period">November 2024 - Present | Adelaide, SA</div>
-                    
-                    <div class="achievement">
-                        <strong>Built a brand-new Microsoft Fabric platform in 30 days</strong> that connects the booking system, Salesforce, and finance database and now 25+ coordinators see real-time data instead of waiting 2 days for Excel reports
-                    </div>
-                    
-                    <div class="achievement">
-                        <strong>Stopped managers from making decisions on bad data</strong> by fixing corrupted timestamps in 200,000+ booking records so weekly disputes between teams dropped from 15-20 to just 3-5
-                    </div>
-                    
-                    <div class="achievement">
-                        <strong>Made forecasts actually useful</strong> by cleaning data and finding a system bug affecting 2,000+ monthly records and accuracy jumped from 65% to 90% so people can actually plan ahead
-                    </div>
-                    
-                    <div class="achievement">
-                        <strong>Ended an 18-month fight between finance and operations</strong> by running 6 workshops where everyone agreed on 18 business rules (now documented in the system)
-                    </div>
-                    
-                    <div class="achievement">
-                        <strong>Gave coordinators 6+ hours back each week</strong> by building automated alerts for late bookings and missed deadlines instead of manual follow-ups
-                    </div>
-                </div>
+    conformed <span class="op">=</span> src_a.unionByName(src_b).unionByName(src_c)
 
-                <!-- AIML Role -->
-                <div class="timeline-item">
-                    <h3>Data Platform & BI Analyst</h3>
-                    <div class="timeline-company">Australian Institute for Machine Learning (AIML)</div>
-                    <div class="timeline-period">September 2023 - September 2024 | Adelaide, SA</div>
-                    
-                    <div class="achievement">
-                        <strong>Protected $42M in research funding</strong> by building a Databricks system that automatically checks every transaction against 22 compliance rules before auditors see them
-                    </div>
-                    
-                    <div class="achievement">
-                        <strong>Saved compliance analysts 40+ hours every month</strong> by automating the manual work of tagging exceptions so what took all month now finishes in under 2 hours
-                    </div>
-                    
-                    <div class="achievement">
-                        <strong>Stopped 1,200+ compliance violations from happening</strong> by catching problems early with Python automation instead of finding them after the fact
-                    </div>
-                    
-                    <div class="achievement">
-                        <strong>Helped investigators work 82% faster</strong> by building Power BI dashboards with drill-through so resolution time dropped from 45 minutes to 8 minutes per case
-                    </div>
-                    
-                    <div class="achievement">
-                        <strong>Made the data pipeline 73% faster</strong> (from 45 minutes down to 12) while processing more data through better design and optimization
-                    </div>
-                </div>
+    <span class="cm"># Apply 22-category business rules</span>
+    conformed <span class="op">=</span> conformed.withColumn(
+        <span class="st">"reason_code"</span>,
+        <span class="fn">apply_classification_rules</span>(F.col(<span class="st">"txn_type"</span>),
+                                    F.col(<span class="st">"amount"</span>),
+                                    F.col(<span class="st">"timestamp"</span>))
+    ).withColumn(
+        <span class="st">"is_exception"</span>,
+        F.col(<span class="st">"reason_code"</span>).isin(EXCEPTION_CODES)
+    )
 
-                <!-- OESON Role -->
-                <div class="timeline-item">
-                    <h3>Data Analyst</h3>
-                    <div class="timeline-company">OESON Global</div>
-                    <div class="timeline-period">January 2023 - July 2023 | Australia</div>
-                    
-                    <div class="achievement">
-                        <strong>Protected 450+ employees from payroll mistakes</strong> by building Azure Synapse pipelines that catch errors like duplicate shifts and wrong pay codes before payday
-                    </div>
-                    
-                    <div class="achievement">
-                        <strong>Found 3,000+ payroll problems before they became payment issues</strong> using automated checks on time tracking and HR data
-                    </div>
-                    
-                    <div class="achievement">
-                        <strong>Gave Finance a 1-2 week head start on problems</strong> by using Python to spot unusual patterns in $2.1M monthly payroll before running pay
-                    </div>
-                    
-                    <div class="achievement">
-                        <strong>Made payroll approval 80% faster</strong> by building dashboards that let Finance managers drill from summary to detail so went from 3 days to 6 hours
-                    </div>
-                </div>
+    <span class="cm"># Write to Delta with schema enforcement</span>
+    conformed.write.format(<span class="st">"delta"</span>
+    ).mode(<span class="st">"overwrite"</span>
+    ).option(<span class="st">"mergeSchema"</span>, <span class="st">"false"</span>
+    ).save(CONFORMED_PATH)
 
-                <!-- Hyundai Role -->
-                <div class="timeline-item">
-                    <h3>BI & Data Platform Analyst</h3>
-                    <div class="timeline-company">Hyundai Mobis Technical Centre of India</div>
-                    <div class="timeline-period">July 2019 - July 2022 | India</div>
-                    
-                    <div class="achievement">
-                        <strong>Built a BI platform from scratch</strong> that pulls data from 10+ SAP tables into Azure SQL and now 40+ procurement and warehouse staff can see what's actually happening with suppliers
-                    </div>
-                    
-                    <div class="achievement">
-                        <strong>Helped suppliers deliver better</strong> by showing them real performance data so on-time delivery improved from 72% to 89% in 6 months
-                    </div>
-                    
-                    <div class="achievement">
-                        <strong>Made problem-solving 87% faster</strong> with drill-down dashboards tracking 200+ suppliers so teams went from taking 2 days to just 4 hours to fix issues
-                    </div>
-                    
-                    <div class="achievement">
-                        <strong>Stopped the weekly manual grind</strong> by eliminating 8+ hours of data reconciliation so made data refreshes 72% faster so reports always match
-                    </div>
-                    
-                    <div class="achievement">
-                        <strong>Built full automation suite</strong> with Power Apps for tracking issues, Power Automate for alerts, and SharePoint for collaboration
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education -->
-    <section class="education-section">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="section-subtitle">My academic foundation in data science and analytics</div>
-            
-            <div class="education-grid">
-                <div class="education-card">
-                    <h3>Master of Data Science</h3>
-                    <div class="institution">University of Adelaide</div>
-                    <div class="period">2022 - 2024 | Adelaide, SA</div>
-                    <div class="highlight">
-                        <strong>GPA: 6.75/7</strong> (Distinction Average)
-                    </div>
-                    <div class="highlight">
-                        <strong>Specialized Training:</strong> Python, R, SQL, Tableau, Power BI, Machine Learning, Deep Learning, Statistical Modeling, Big Data Technologies
-                    </div>
-                </div>
-                
-                <div class="education-card">
-                    <h3>Bachelor of Electronics & Communication Engineering</h3>
-                    <div class="institution">VNR Vignana Jyothi Institute of Engineering and Technology</div>
-                    <div class="period">2015 - 2019 | Telangana, India</div>
-                    <div class="highlight">
-                        <strong>GPA: 9.02/10</strong> (First Class with Distinction)
-                    </div>
-                    <div class="highlight">
-                        <strong>Specialized Training:</strong> C, C++, Java, Python, Embedded Systems, Signal Processing
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <div class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Let's Work Together</h2>
-                <p>
-                    I build data systems that people trust and use every day.<br>
-                    Ready to talk about how I can help your team?
-                </p>
-                <a href="mailto:harishthota001@gmail.com" class="btn">Get In Touch</a>
-            </div>
-        </div>
+    <span class="kw">return</span> conformed.count()</pre>
+      </div>
+      <p class="code-caption">Merges 3 incompatible source schemas into a single governed Delta table. Schema enforcement prevents upstream changes silently corrupting downstream reports.</p>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Harish Thota | Data & BI Analyst</p>
-            <p>Adelaide, South Australia | Available for Full-Time Opportunities</p>
+    <!-- Sample 4: SQL Validation Suite -->
+    <div>
+      <div class="code-block">
+        <div class="code-block-header">
+          <span class="code-filename">payroll_validation.sql</span>
+          <span class="code-lang">T-SQL · Azure Synapse</span>
         </div>
-    </footer>
+        <pre><span class="cm">-- Payroll validation suite (excerpt: 4 of 12 checks)</span>
+<span class="cm">-- Runs before every pay-run sign-off @ OESON Global</span>
+
+<span class="cm">-- CHECK 1: Duplicate employee records</span>
+<span class="kw">SELECT</span> employee_id, pay_period,
+       <span class="fn">COUNT</span>(*) <span class="kw">AS</span> duplicate_count
+<span class="kw">FROM</span>   staging.payroll_extract
+<span class="kw">GROUP BY</span> employee_id, pay_period
+<span class="kw">HAVING COUNT</span>(*) <span class="op">></span> <span class="nu">1</span>;
+
+<span class="cm">-- CHECK 2: Missing base/overtime pair</span>
+<span class="kw">SELECT</span> e.employee_id
+<span class="kw">FROM</span>   staging.payroll_extract e
+<span class="kw">LEFT JOIN</span> staging.overtime_detail o
+       <span class="kw">ON</span> e.employee_id <span class="op">=</span> o.employee_id
+      <span class="kw">AND</span> e.pay_period  <span class="op">=</span> o.pay_period
+<span class="kw">WHERE</span>  e.has_overtime_flag <span class="op">=</span> <span class="nu">1</span>
+  <span class="kw">AND</span>  o.employee_id <span class="kw">IS NULL</span>;
+
+<span class="cm">-- CHECK 3: Overtime rate anomaly (>3× base)</span>
+<span class="kw">SELECT</span> employee_id, base_rate, overtime_rate,
+       overtime_rate <span class="op">/</span> base_rate <span class="kw">AS</span> multiplier
+<span class="kw">FROM</span>   staging.payroll_extract
+<span class="kw">WHERE</span>  overtime_rate <span class="op">/</span> NULLIF(base_rate,<span class="nu">0</span>) <span class="op">></span> <span class="nu">3.0</span>;
+
+<span class="cm">-- CHECK 4: Invalid pay-code mapping</span>
+<span class="kw">SELECT</span> p.employee_id, p.pay_code
+<span class="kw">FROM</span>   staging.payroll_extract p
+<span class="kw">LEFT JOIN</span> ref.valid_pay_codes r
+       <span class="kw">ON</span> p.pay_code <span class="op">=</span> r.code
+<span class="kw">WHERE</span>  r.code <span class="kw">IS NULL</span>;</pre>
+      </div>
+      <p class="code-caption">Each check returns rows only when a defect exists. Empty result = passed. Any row = pipeline blocked. Zero incorrect pay-runs across 4 consecutive monthly cycles.</p>
+    </div>
+
+  </div>
+</div>
+
+<hr class="full-rule"/>
+
+<!-- ─── CASE STUDY CARDS ─── -->
+<div id="work" class="section">
+  <div class="eyebrow">Case Studies</div>
+  <h2 class="section-h">Where outcomes were built</h2>
+  <p class="section-lead">Three production systems. Each started with a broken process. Each case study includes the full architecture, problem narrative, code patterns, and results.</p>
+
+  <div class="case-cards">
+
+    <!-- CARD 01 -->
+    <div class="case-card reveal">
+      <div class="case-card-body">
+        <div class="case-card-idx">Case 01 of 03</div>
+        <div class="case-card-co">Grad Careers Australia · Sep 2024 – Present</div>
+        <div class="case-card-title">Silently failing pipelines were giving schedulers corrupted staffing data — every single day</div>
+        <div class="case-metrics-strip">
+          <div class="case-metric amber"><div class="case-metric-num">–40%</div><div class="case-metric-label">Reporting disputes</div></div>
+          <div class="case-metric teal"><div class="case-metric-num">+20–25%</div><div class="case-metric-label">Staffing accuracy</div></div>
+          <div class="case-metric amber"><div class="case-metric-num">4,000+</div><div class="case-metric-label">Defects corrected</div></div>
+        </div>
+        <p class="case-card-lead">The rostering system ran full daily reloads with zero quality checks. Failures were silent. 4,000+ timestamp defects corrupted the demand fact table used every morning. I rebuilt the pipeline from scratch with a 12-check quality gate and Bronze → Gold Medallion architecture.</p>
+        <div class="case-card-tags">
+          <span class="case-tag">ADF</span><span class="case-tag">Microsoft Fabric</span><span class="case-tag">Delta Lake</span>
+          <span class="case-tag">Python</span><span class="case-tag">T-SQL</span><span class="case-tag">Power BI</span><span class="case-tag">Azure DevOps</span>
+        </div>
+        <a href="case-01.html" class="case-card-link">Read full case study — architecture + code →</a>
+      </div>
+      <div class="case-card-arch">
+        <div class="arch-label">Architecture overview</div>
+        <svg viewBox="0 0 240 300" width="200" xmlns="http://www.w3.org/2000/svg" style="font-family:'IBM Plex Mono',monospace">
+          <!-- Source -->
+          <rect x="60" y="10" width="120" height="32" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+          <text x="120" y="30" text-anchor="middle" font-size="9" fill="#92400E">Booking System</text>
+          <!-- Arrow -->
+          <line x1="120" y1="42" x2="120" y2="58" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr)"/>
+          <!-- ADF -->
+          <rect x="50" y="58" width="140" height="32" rx="3" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+          <text x="120" y="74" text-anchor="middle" font-size="8" fill="#1D4ED8" font-weight="500">ADF · Watermark Merge</text>
+          <text x="120" y="85" text-anchor="middle" font-size="7" fill="#3B82F6">5 parameterised pipelines</text>
+          <!-- Arrow -->
+          <line x1="120" y1="90" x2="120" y2="106" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr)"/>
+          <!-- Bronze -->
+          <rect x="60" y="106" width="120" height="28" rx="3" fill="#F3F2EE" stroke="#D6D0C8" stroke-width="1.5"/>
+          <text x="120" y="124" text-anchor="middle" font-size="8.5" fill="#78716C">Bronze · Raw Delta</text>
+          <!-- Arrow -->
+          <line x1="120" y1="134" x2="120" y2="150" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr)"/>
+          <!-- Quality Gate -->
+          <rect x="40" y="150" width="160" height="36" rx="3" fill="#FEF2F2" stroke="#FECACA" stroke-width="1.5"/>
+          <text x="120" y="166" text-anchor="middle" font-size="8.5" fill="#B91C1C" font-weight="500">Quality Gate · 12 Checks</text>
+          <text x="120" y="179" text-anchor="middle" font-size="7" fill="#DC2626">Hard-blocks on any failure</text>
+          <!-- Arrow -->
+          <line x1="120" y1="186" x2="120" y2="202" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr)"/>
+          <!-- Silver/Gold -->
+          <rect x="60" y="202" width="120" height="28" rx="3" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1.5"/>
+          <text x="120" y="220" text-anchor="middle" font-size="8.5" fill="#0F766E">Silver → Gold · 7 tables</text>
+          <!-- Arrow -->
+          <line x1="120" y1="230" x2="120" y2="246" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr)"/>
+          <!-- Power BI -->
+          <rect x="60" y="246" width="120" height="28" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+          <text x="120" y="264" text-anchor="middle" font-size="8.5" fill="#92400E">Power BI · 2 Dashboards</text>
+          <defs>
+            <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L6,3 z" fill="#D6D0C8"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    </div>
+
+    <!-- CARD 02 -->
+    <div class="case-card reveal">
+      <div class="case-card-body">
+        <div class="case-card-idx">Case 02 of 03</div>
+        <div class="case-card-co">AIML · University of Adelaide · Sep 2023 – Sep 2024</div>
+        <div class="case-card-title">Government reporting deadlines were being missed — 3-day manual reconciliation, every single month</div>
+        <div class="case-metrics-strip">
+          <div class="case-metric amber"><div class="case-metric-num">+25%</div><div class="case-metric-label">Audit accuracy</div></div>
+          <div class="case-metric teal"><div class="case-metric-num">3d → 1d</div><div class="case-metric-label">Month-end close</div></div>
+          <div class="case-metric amber"><div class="case-metric-num">45→10m</div><div class="case-metric-label">Per-exception audit time</div></div>
+        </div>
+        <p class="case-card-lead">137,000+ finance transactions reconciled manually every month from 3 disconnected systems. Sign-off variances were untraceable. I replaced the entire process with Databricks PySpark conformed layers, a 22-category rules engine, and Power BI drill-through for auditors.</p>
+        <div class="case-card-tags">
+          <span class="case-tag">Databricks</span><span class="case-tag">PySpark</span><span class="case-tag">Delta Lake</span>
+          <span class="case-tag">dbt</span><span class="case-tag">T-SQL</span><span class="case-tag">Power BI</span>
+        </div>
+        <a href="case-02.html" class="case-card-link">Read full case study — architecture + code →</a>
+      </div>
+      <div class="case-card-arch">
+        <div class="arch-label">Architecture overview</div>
+        <svg viewBox="0 0 240 310" width="200" xmlns="http://www.w3.org/2000/svg">
+          <!-- 3 Sources -->
+          <rect x="5" y="10" width="68" height="28" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+          <text x="39" y="28" text-anchor="middle" font-size="7.5" fill="#92400E">Finance Sys A</text>
+          <rect x="86" y="10" width="68" height="28" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+          <text x="120" y="28" text-anchor="middle" font-size="7.5" fill="#92400E">Finance Sys B</text>
+          <rect x="167" y="10" width="68" height="28" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+          <text x="201" y="28" text-anchor="middle" font-size="7.5" fill="#92400E">Finance Sys C</text>
+          <!-- Converge lines -->
+          <line x1="39" y1="38" x2="120" y2="72" stroke="#D6D0C8" stroke-width="1.2"/>
+          <line x1="120" y1="38" x2="120" y2="72" stroke="#D6D0C8" stroke-width="1.2"/>
+          <line x1="201" y1="38" x2="120" y2="72" stroke="#D6D0C8" stroke-width="1.2"/>
+          <!-- Databricks -->
+          <rect x="50" y="72" width="140" height="34" rx="3" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+          <text x="120" y="87" text-anchor="middle" font-size="8.5" fill="#1D4ED8" font-weight="500">Databricks PySpark</text>
+          <text x="120" y="99" text-anchor="middle" font-size="7" fill="#3B82F6">Normalise + Union all 3 sources</text>
+          <line x1="120" y1="106" x2="120" y2="122" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr2)"/>
+          <!-- Rules Engine -->
+          <rect x="40" y="122" width="160" height="34" rx="3" fill="#F3F2EE" stroke="#D6D0C8" stroke-width="1.5"/>
+          <text x="120" y="138" text-anchor="middle" font-size="8.5" fill="#44403C" font-weight="500">Rules Engine</text>
+          <text x="120" y="150" text-anchor="middle" font-size="7" fill="#78716C">22 categories · 9 timestamp rules</text>
+          <line x1="120" y1="156" x2="120" y2="172" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr2)"/>
+          <!-- Delta Lake Conformed -->
+          <rect x="50" y="172" width="140" height="28" rx="3" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1.5"/>
+          <text x="120" y="190" text-anchor="middle" font-size="8.5" fill="#0F766E">Delta Lake · Conformed</text>
+          <line x1="120" y1="200" x2="120" y2="216" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr2)"/>
+          <!-- dbt -->
+          <rect x="60" y="216" width="120" height="28" rx="3" fill="#F3F2EE" stroke="#D6D0C8" stroke-width="1.5"/>
+          <text x="120" y="234" text-anchor="middle" font-size="8.5" fill="#44403C">dbt Modular Layers</text>
+          <line x1="120" y1="244" x2="120" y2="260" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr2)"/>
+          <!-- Power BI -->
+          <rect x="50" y="260" width="140" height="34" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+          <text x="120" y="276" text-anchor="middle" font-size="8.5" fill="#92400E">Power BI Drill-through</text>
+          <text x="120" y="288" text-anchor="middle" font-size="7" fill="#B45309">Exception → Entity → Txn</text>
+          <defs>
+            <marker id="arr2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L6,3 z" fill="#D6D0C8"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    </div>
+
+    <!-- CARD 03 -->
+    <div class="case-card reveal">
+      <div class="case-card-body">
+        <div class="case-card-idx">Case 03 of 03</div>
+        <div class="case-card-co">OESON Global · Jan 2023 – Jul 2023</div>
+        <div class="case-card-title">Three teams. Three overtime methods. No validation before money left the company.</div>
+        <div class="case-metrics-strip">
+          <div class="case-metric teal"><div class="case-metric-num">Zero</div><div class="case-metric-label">Incorrect pay-runs (4 cycles)</div></div>
+          <div class="case-metric amber"><div class="case-metric-num">5d → 2d</div><div class="case-metric-label">Finance approval</div></div>
+          <div class="case-metric teal"><div class="case-metric-num">1–2 wks</div><div class="case-metric-label">Saved per cycle</div></div>
+        </div>
+        <p class="case-card-lead">Payroll for 250,000+ records ran on manual CSV exports with no automated validation. Wrong overtime calculations slipped through to Finance sign-off unchecked. I built a 12-check Python + SQL validation engine that intercepted every defect before the pay-run — four cycles, zero errors.</p>
+        <div class="case-card-tags">
+          <span class="case-tag">Azure Synapse</span><span class="case-tag">Python</span>
+          <span class="case-tag">T-SQL</span><span class="case-tag">Power BI</span><span class="case-tag">Git</span>
+        </div>
+        <a href="case-03.html" class="case-card-link">Read full case study — architecture + code →</a>
+      </div>
+      <div class="case-card-arch">
+        <div class="arch-label">Architecture overview</div>
+        <svg viewBox="0 0 240 280" width="200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Source systems -->
+          <rect x="30" y="10" width="80" height="28" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+          <text x="70" y="28" text-anchor="middle" font-size="7.5" fill="#92400E">HR System</text>
+          <rect x="130" y="10" width="80" height="28" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+          <text x="170" y="28" text-anchor="middle" font-size="7.5" fill="#92400E">Time System</text>
+          <!-- Lines converge -->
+          <line x1="70" y1="38" x2="120" y2="70" stroke="#D6D0C8" stroke-width="1.2"/>
+          <line x1="170" y1="38" x2="120" y2="70" stroke="#D6D0C8" stroke-width="1.2"/>
+          <!-- Synapse -->
+          <rect x="45" y="70" width="150" height="32" rx="3" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+          <text x="120" y="86" text-anchor="middle" font-size="8.5" fill="#1D4ED8" font-weight="500">Azure Synapse Extract</text>
+          <text x="120" y="97" text-anchor="middle" font-size="7" fill="#3B82F6">250k+ records consolidated</text>
+          <line x1="120" y1="102" x2="120" y2="118" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr3)"/>
+          <!-- Validation -->
+          <rect x="35" y="118" width="170" height="36" rx="3" fill="#FEF2F2" stroke="#FECACA" stroke-width="1.5"/>
+          <text x="120" y="134" text-anchor="middle" font-size="8.5" fill="#B91C1C" font-weight="500">Python + SQL · 12 Checks</text>
+          <text x="120" y="147" text-anchor="middle" font-size="7" fill="#DC2626">Blocks pay-run on any defect</text>
+          <line x1="120" y1="154" x2="120" y2="170" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr3)"/>
+          <!-- SQL Views -->
+          <rect x="50" y="170" width="140" height="28" rx="3" fill="#F3F2EE" stroke="#D6D0C8" stroke-width="1.5"/>
+          <text x="120" y="188" text-anchor="middle" font-size="8.5" fill="#44403C">8 Reusable SQL Views</text>
+          <line x1="120" y1="198" x2="120" y2="214" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr3)"/>
+          <!-- Finance -->
+          <rect x="40" y="214" width="80" height="28" rx="3" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1.5"/>
+          <text x="80" y="232" text-anchor="middle" font-size="8" fill="#0F766E">Finance Sign-off</text>
+          <rect x="130" y="214" width="80" height="28" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+          <text x="170" y="232" text-anchor="middle" font-size="8" fill="#92400E">Power BI Recon</text>
+          <defs>
+            <marker id="arr3" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L6,3 z" fill="#D6D0C8"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="full-rule"/>
+
+<!-- ─── EXPERIENCE ─── -->
+<div id="experience" class="section">
+  <div class="eyebrow">Professional History</div>
+  <h2 class="section-h">Experience</h2>
+  <p class="section-lead">4+ years of progressive data engineering — university research, IT consulting, career services, and automotive manufacturing.</p>
+
+  <div class="exp-rows">
+    <div class="exp-row reveal">
+      <div>
+        <div class="exp-period">Sep 2024 – Present</div>
+        <div class="exp-win">↑ –40% disputes</div>
+      </div>
+      <div>
+        <div class="exp-co">Grad Careers Australia · Adelaide, SA</div>
+        <div class="exp-role">Data Engineer</div>
+        <div class="exp-highlight">↑ +20–25% peak staffing accuracy</div>
+        <p class="exp-desc">Built and maintain batch pipelines processing 200,000+ annual training bookings. Implemented the organisation's first Medallion architecture with CI/CD governance and a 12-check quality-gate suite that blocks bad data before it reaches dashboards.</p>
+        <div class="exp-tags">
+          <span class="exp-tag">ADF</span><span class="exp-tag">Microsoft Fabric</span><span class="exp-tag">Delta Lake</span>
+          <span class="exp-tag">T-SQL</span><span class="exp-tag">Python</span><span class="exp-tag">Power BI</span><span class="exp-tag">Azure DevOps</span>
+        </div>
+      </div>
+    </div>
+    <div class="exp-row reveal">
+      <div>
+        <div class="exp-period">Sep 2023 – Sep 2024</div>
+        <div class="exp-win">↑ Month-end: 3d → 1d</div>
+      </div>
+      <div>
+        <div class="exp-co">AIML · University of Adelaide · Adelaide, SA</div>
+        <div class="exp-role">Data Engineer (Analytics & Compliance)</div>
+        <div class="exp-highlight">↑ +25% audit accuracy</div>
+        <p class="exp-desc">Engineered conformed data layers for monthly government reporting across 137,000+ finance transactions from 3 source systems. Replaced 3-day manual reconciliation with automated Databricks pipelines.</p>
+        <div class="exp-tags">
+          <span class="exp-tag">Databricks</span><span class="exp-tag">PySpark</span><span class="exp-tag">Delta Lake</span>
+          <span class="exp-tag">dbt</span><span class="exp-tag">T-SQL</span><span class="exp-tag">Power BI</span>
+        </div>
+      </div>
+    </div>
+    <div class="exp-row reveal">
+      <div>
+        <div class="exp-period">Jan 2023 – Jul 2023</div>
+        <div class="exp-win">↑ 5d → 2d approval</div>
+      </div>
+      <div>
+        <div class="exp-co">OESON Global · Australia</div>
+        <div class="exp-role">Data Engineer</div>
+        <div class="exp-highlight">↑ Zero incorrect pay-runs across 4 cycles</div>
+        <p class="exp-desc">Built enterprise payroll pipelines and a 12-check validation framework for 250,000+ records. Every defect caught before Finance sign-off — four consecutive pay cycles, zero incorrect payments.</p>
+        <div class="exp-tags">
+          <span class="exp-tag">Azure Synapse</span><span class="exp-tag">Python</span><span class="exp-tag">T-SQL</span>
+          <span class="exp-tag">Power BI</span><span class="exp-tag">Git</span>
+        </div>
+      </div>
+    </div>
+    <div class="exp-row reveal">
+      <div>
+        <div class="exp-period">2019 – 2022</div>
+        <div class="exp-win">↑ KPI disputes –30%</div>
+      </div>
+      <div>
+        <div class="exp-co">Hyundai Mobis Technical Centre · India</div>
+        <div class="exp-role">Data Engineer (Reporting & Analytics)</div>
+        <div class="exp-highlight">↑ 8 hrs/week manual effort eliminated</div>
+        <p class="exp-desc">Built ADF pipelines and star schema dimensional model for warehouse and supplier performance. 8 Power BI dashboards reduced root-cause analysis from 1 hour to under 15 minutes.</p>
+        <div class="exp-tags">
+          <span class="exp-tag">ADF</span><span class="exp-tag">Azure SQL</span><span class="exp-tag">T-SQL</span>
+          <span class="exp-tag">Power BI</span><span class="exp-tag">Spark</span><span class="exp-tag">Star Schema</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:3.5rem">
+    <div class="eyebrow">Education</div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-deg">Master of Data Science</div>
+        <div class="edu-uni">University of Adelaide</div>
+        <div class="edu-meta">GPA 6.75 / 7.0 · Top 5% of class · 2022–2024</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-deg">Bachelor of Engineering (ECE)</div>
+        <div class="edu-uni">VNR Vignana Jyothi Institute of Engineering</div>
+        <div class="edu-meta">GPA 9.02 / 10.0 · 2015–2019</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── CONTACT ─── -->
+<div class="contact-bg" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="c-eyebrow">Let's work together</div>
+      <h2 class="c-title">Ready when<br/><em>you are.</em></h2>
+      <p class="c-body">Open to Data Engineer roles across Australia. Full working rights on a Subclass 485 visa — no sponsorship required. Happy to talk this week.</p>
+      <div class="c-links">
+        <a href="mailto:harishthota001@gmail.com" class="c-link">
+          <div class="c-link-icon">✉</div>
+          <div><div class="c-link-lbl">Email</div><div class="c-link-val">harishthota001@gmail.com</div></div>
+        </a>
+        <a href="tel:0459182404" class="c-link">
+          <div class="c-link-icon">☎</div>
+          <div><div class="c-link-lbl">Phone</div><div class="c-link-val">0459 182 404</div></div>
+        </a>
+        <a href="https://linkedin.com/in/harish-thota-ds" target="_blank" class="c-link">
+          <div class="c-link-icon">in</div>
+          <div><div class="c-link-lbl">LinkedIn</div><div class="c-link-val">linkedin.com/in/harish-thota-ds</div></div>
+        </a>
+      </div>
+    </div>
+    <div class="avail">
+      <div class="avail-header"><div class="avail-dot"></div>Open to opportunities</div>
+      <div class="avail-row"><div class="avail-k">Work rights</div><div class="avail-v green">Full · 485 Visa</div></div>
+      <div class="avail-row"><div class="avail-k">Experience</div><div class="avail-v">4+ yrs · 2.5 yrs in AU</div></div>
+      <div class="avail-row"><div class="avail-k">Role</div><div class="avail-v">Data Engineer</div></div>
+      <div class="avail-row"><div class="avail-k">Location</div><div class="avail-v">Australia · Remote OK</div></div>
+      <div class="avail-row"><div class="avail-k">Salary target</div><div class="avail-v amber">$90k – $115k</div></div>
+      <div class="avail-row"><div class="avail-k">Notice period</div><div class="avail-v green">Immediate</div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft">© 2026 Harish Thota · Data Engineer</div>
+  <div class="ft">harishthota001@gmail.com · 0459 182 404</div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:0.07});
+  document.querySelectorAll('.reveal,.case-card,.exp-row').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
