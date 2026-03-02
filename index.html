@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Harish Thota — Data Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -24,7 +23,6 @@ html{scroll-behavior:smooth}
 body{background:var(--cream);color:var(--ink);font-family:var(--ff-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(--border2)}
 
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 4rem;background:rgba(247,245,240,0.93);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
 .nav-logo{font-family:var(--ff-mono);font-size:0.75rem;color:var(--ink3);letter-spacing:0.08em}
 .nav-logo span{color:var(--amber);font-weight:500}
@@ -34,7 +32,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 .nav-hire{display:inline-flex;align-items:center;gap:0.4rem;background:var(--ink);color:var(--white);font-size:0.78rem;font-weight:600;padding:0.5rem 1.1rem;border-radius:4px;text-decoration:none;transition:background 0.15s}
 .nav-hire:hover{background:var(--amber)}
 
-/* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;max-width:1100px;margin:0 auto;padding:7rem 4rem 5rem;position:relative}
 .hero-available{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--ff-mono);font-size:0.7rem;color:var(--teal);background:var(--teal-bg);border:1px solid var(--teal-border);padding:0.3rem 0.85rem;border-radius:100px;margin-bottom:2.5rem;letter-spacing:0.04em;animation:fadeUp 0.5s ease both}
 .pulse{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pulse 2s infinite}
@@ -49,14 +46,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 .btn-primary:hover{background:var(--amber);transform:translateY(-1px)}
 .btn-ghost{display:inline-flex;align-items:center;gap:0.5rem;border:1.5px solid var(--border2);color:var(--ink2);font-size:0.85rem;font-weight:500;padding:0.75rem 1.5rem;border-radius:5px;text-decoration:none;transition:all 0.15s}
 .btn-ghost:hover{border-color:var(--ink);color:var(--ink)}
-.btn-amber{display:inline-flex;align-items:center;gap:0.5rem;background:var(--amber);color:var(--white);font-size:0.82rem;font-weight:600;padding:0.65rem 1.35rem;border-radius:5px;text-decoration:none;transition:all 0.15s}
-.btn-amber:hover{background:#B45309;transform:translateY(-1px)}
 .hero-meta{display:flex;gap:2.5rem}
 .hero-meta-num{font-family:var(--ff-display);font-size:2rem;font-weight:700;color:var(--ink);line-height:1}
 .hero-meta-num span{color:var(--amber)}
 .hero-meta-label{font-size:0.73rem;color:var(--ink3);margin-top:0.2rem}
 
-/* RECRUITER PACK BANNER */
 .pack-banner{background:var(--amber-bg);border:1px solid var(--amber-border);border-left:3px solid var(--amber);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;margin-top:3rem;border-radius:4px;animation:fadeUp 0.5s 0.4s ease both}
 .pack-text{font-size:0.88rem;color:#92400E;line-height:1.5}
 .pack-text strong{font-weight:600}
@@ -66,16 +60,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 .pack-btn.outline{background:transparent;border:1px solid var(--amber);color:var(--amber)}
 .pack-btn.outline:hover{background:var(--amber);color:white}
 
-/* RULE */
 .full-rule{border:none;border-top:1px solid var(--border);margin:0}
-
-/* SECTION BASE */
 .section{max-width:1100px;margin:0 auto;padding:5.5rem 4rem}
 .eyebrow{font-family:var(--ff-mono);font-size:0.67rem;color:var(--ink3);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.6rem}
 .section-h{font-family:var(--ff-display);font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-0.025em;line-height:1.05;margin-bottom:1rem}
 .section-lead{font-size:0.97rem;color:var(--ink2);line-height:1.8;max-width:580px;margin-bottom:3.5rem}
 
-/* WHY SECTION */
 .why-bg{background:var(--ink);border-top:3px solid var(--amber)}
 .why-inner{max-width:1100px;margin:0 auto;padding:5.5rem 4rem}
 .why-eyebrow{font-family:var(--ff-mono);font-size:0.67rem;color:rgba(255,255,255,0.4);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.7rem}
@@ -89,7 +79,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 .why-card-body{font-size:0.85rem;color:rgba(255,255,255,0.55);line-height:1.75}
 .why-card-body strong{color:rgba(255,255,255,0.85);font-weight:500}
 
-/* STACK */
 .stack-bg{background:var(--cream2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .stack-row-item{display:grid;grid-template-columns:180px 1fr;padding:1.1rem 0;border-bottom:1px solid var(--border);align-items:center;gap:2rem}
 .stack-row-item:last-child{border-bottom:none}
@@ -98,7 +87,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 .chip{font-family:var(--ff-mono);font-size:0.7rem;padding:0.3rem 0.75rem;border-radius:3px;border:1px solid var(--border2);background:var(--white);color:var(--ink2)}
 .chip.core{background:var(--amber-bg);border-color:var(--amber-border);color:#92400E;font-weight:500}
 
-/* CODE SAMPLES */
 .code-samples-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
 .code-block{background:#1a1917;border-radius:6px;overflow:hidden;border:1px solid #333}
 .code-block-header{background:#252320;padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #333}
@@ -108,10 +96,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 .kw{color:#c792ea}.fn{color:#82aaff}.st{color:#c3e88d}.cm{color:#546E7A;font-style:italic}.nu{color:#F78C6C}.op{color:#89DDFF}
 .code-caption{font-size:0.8rem;color:var(--ink3);margin-top:0.75rem;line-height:1.5}
 
-/* CASE STUDY CARDS */
 .case-cards{display:grid;grid-template-columns:1fr;gap:2rem}
 .case-card{
-  display:grid;grid-template-columns:1fr 320px;
+  display:grid;grid-template-columns:1fr 360px;
   border:1px solid var(--border);border-radius:6px;overflow:hidden;
   background:var(--white);
   opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;
@@ -121,14 +108,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 .case-card-body{padding:2rem}
 .case-card-idx{font-family:var(--ff-mono);font-size:0.62rem;color:var(--ink4);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem}
 .case-card-co{font-size:0.82rem;color:var(--ink3);margin-bottom:0.15rem}
-.case-card-title{font-family:var(--ff-display);font-size:1.35rem;font-weight:700;line-height:1.25;color:var(--ink);margin-bottom:1rem}
+.case-card-title{
+  font-family:var(--ff-display);font-size:1.35rem;font-weight:700;
+  line-height:1.25;color:var(--ink);margin-bottom:1rem;
+  word-wrap:break-word;overflow-wrap:break-word;hyphens:auto;
+}
 .case-card-lead{font-size:0.88rem;color:var(--ink2);line-height:1.7;margin-bottom:1.25rem;max-width:480px}
 .case-card-tags{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:1.5rem}
 .case-tag{font-family:var(--ff-mono);font-size:0.6rem;padding:0.2rem 0.5rem;border-radius:2px;border:1px solid var(--border);background:var(--cream2);color:var(--ink3)}
 .case-card-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.83rem;font-weight:600;color:var(--amber);text-decoration:none;transition:gap 0.15s}
 .case-card-link:hover{gap:0.6rem}
 
-/* Architecture preview panel */
 .case-card-arch{
   background:var(--cream2);border-left:1px solid var(--border);
   padding:1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -136,7 +126,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 }
 .arch-label{font-family:var(--ff-mono);font-size:0.6rem;color:var(--ink3);letter-spacing:0.1em;text-transform:uppercase;text-align:center}
 
-/* Mini metric strip */
 .case-metrics-strip{display:flex;gap:1rem;margin-bottom:1.25rem;flex-wrap:wrap}
 .case-metric{padding:0.5rem 0.85rem;border-radius:4px}
 .case-metric.amber{background:var(--amber-bg);border:1px solid var(--amber-border)}
@@ -146,7 +135,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 .teal .case-metric-num{color:var(--teal)}
 .case-metric-label{font-size:0.68rem;color:var(--ink3);margin-top:0.15rem}
 
-/* EXPERIENCE */
 .exp-rows{display:flex;flex-direction:column}
 .exp-row{display:grid;grid-template-columns:200px 1fr;padding:2rem 0;border-top:1px solid var(--border);gap:4rem;align-items:start;opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease}
 .exp-row:first-child{border-top:none;padding-top:0}
@@ -160,14 +148,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 .exp-tags{display:flex;flex-wrap:wrap;gap:0.3rem}
 .exp-tag{font-family:var(--ff-mono);font-size:0.6rem;padding:0.2rem 0.5rem;border-radius:2px;border:1px solid var(--border);background:var(--cream2);color:var(--ink3)}
 
-/* EDU */
 .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem}
 .edu-card{background:var(--white);border:1px solid var(--border);border-radius:5px;padding:1.5rem}
 .edu-deg{font-weight:600;font-size:0.93rem;margin-bottom:0.2rem}
 .edu-uni{font-size:0.84rem;color:var(--ink2);margin-bottom:0.5rem}
 .edu-meta{font-family:var(--ff-mono);font-size:0.68rem;color:var(--amber)}
 
-/* CONTACT */
 .contact-bg{background:var(--ink)}
 .contact-inner{max-width:1100px;margin:0 auto;padding:6rem 4rem;display:grid;grid-template-columns:1fr 320px;gap:5rem;align-items:start}
 .c-eyebrow{font-family:var(--ff-mono);font-size:0.67rem;color:rgba(255,255,255,0.35);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.75rem}
@@ -222,7 +208,6 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.07);padding
   <a href="mailto:harishthota001@gmail.com" class="nav-hire">Hire me →</a>
 </nav>
 
-<!-- ─── HERO ─── -->
 <section id="about" class="hero">
   <div class="hero-available"><span class="pulse"></span>Open to Data Engineer roles · Australia</div>
   <h1 class="hero-statement">Data breaks.<br/><em>I stop it before</em><br/>anyone notices.</h1>
@@ -250,7 +235,6 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.07);padding
     </div>
   </div>
 
-  <!-- RECRUITER PACK BANNER -->
   <div class="pack-banner">
     <div class="pack-text"><strong>Recruiter? Save time.</strong> Download my resume or full case study pack — everything you need in one click.</div>
     <div class="pack-btns">
@@ -262,7 +246,6 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.07);padding
 
 <hr class="full-rule"/>
 
-<!-- ─── WHY HARISH ─── -->
 <div class="why-bg" id="why">
   <div class="why-inner">
     <div class="why-eyebrow">Why hire me</div>
@@ -288,7 +271,6 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.07);padding
   </div>
 </div>
 
-<!-- ─── STACK ─── -->
 <div class="stack-bg" id="stack">
   <div class="section">
     <div class="eyebrow">Technical Stack</div>
@@ -331,15 +313,12 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.07);padding
 
 <hr class="full-rule"/>
 
-<!-- ─── CODE SAMPLES ─── -->
 <div id="code" class="section">
   <div class="eyebrow">Code Samples</div>
   <h2 class="section-h">How I write it</h2>
   <p class="section-lead">Anonymised snippets from real production pipelines — showing the quality-gate and transformation patterns I apply across every project.</p>
 
   <div class="code-samples-grid">
-
-    <!-- Sample 1: Watermark Incremental Merge -->
     <div>
       <div class="code-block">
         <div class="code-block-header">
@@ -388,7 +367,6 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.07);padding
       <p class="code-caption">Eliminates full daily reloads. Reruns only touch affected date windows — cutting compute and preventing cascade failures on partial source outages.</p>
     </div>
 
-    <!-- Sample 2: Quality Gate Suite -->
     <div>
       <div class="code-block">
         <div class="code-block-header">
@@ -431,7 +409,6 @@ CHECKS <span class="op">=</span> [
       <p class="code-caption">Hard-stops the pipeline on any single failure. Stakeholders never see a partial or corrupted refresh — the dashboard simply doesn't update until data is clean.</p>
     </div>
 
-    <!-- Sample 3: PySpark Conformed Layer -->
     <div>
       <div class="code-block">
         <div class="code-block-header">
@@ -471,54 +448,46 @@ CHECKS <span class="op">=</span> [
       <p class="code-caption">Merges 3 incompatible source schemas into a single governed Delta table. Schema enforcement prevents upstream changes silently corrupting downstream reports.</p>
     </div>
 
-    <!-- Sample 4: SQL Validation Suite -->
     <div>
       <div class="code-block">
         <div class="code-block-header">
-          <span class="code-filename">payroll_validation.sql</span>
-          <span class="code-lang">T-SQL · Azure Synapse</span>
+          <span class="code-filename">validation.sql</span>
+          <span class="code-lang">T-SQL · Synapse</span>
         </div>
-        <pre><span class="cm">-- Payroll validation suite (excerpt: 4 of 12 checks)</span>
-<span class="cm">-- Runs before every pay-run sign-off @ OESON Global</span>
+        <pre><span class="cm">-- Validation suite (excerpt: 4 of 8 checks)</span>
+<span class="cm">-- Manufacturing supply chain @ Hyundai Mobis</span>
 
-<span class="cm">-- CHECK 1: Duplicate employee records</span>
-<span class="kw">SELECT</span> employee_id, pay_period,
-       <span class="fn">COUNT</span>(*) <span class="kw">AS</span> duplicate_count
-<span class="kw">FROM</span>   staging.payroll_extract
-<span class="kw">GROUP BY</span> employee_id, pay_period
+<span class="cm">-- CHECK 1: Duplicate part records</span>
+<span class="kw">SELECT</span> part_id, warehouse_id, 
+       <span class="fn">COUNT</span>(*) <span class="kw">AS</span> dup_count
+<span class="kw">FROM</span>   staging.inventory_snapshot
+<span class="kw">GROUP BY</span> part_id, warehouse_id
 <span class="kw">HAVING COUNT</span>(*) <span class="op">></span> <span class="nu">1</span>;
 
-<span class="cm">-- CHECK 2: Missing base/overtime pair</span>
-<span class="kw">SELECT</span> e.employee_id
-<span class="kw">FROM</span>   staging.payroll_extract e
-<span class="kw">LEFT JOIN</span> staging.overtime_detail o
-       <span class="kw">ON</span> e.employee_id <span class="op">=</span> o.employee_id
-      <span class="kw">AND</span> e.pay_period  <span class="op">=</span> o.pay_period
-<span class="kw">WHERE</span>  e.has_overtime_flag <span class="op">=</span> <span class="nu">1</span>
-  <span class="kw">AND</span>  o.employee_id <span class="kw">IS NULL</span>;
+<span class="cm">-- CHECK 2: Negative stock levels</span>
+<span class="kw">SELECT</span> part_id, warehouse_id, stock_qty
+<span class="kw">FROM</span>   staging.inventory_snapshot
+<span class="kw">WHERE</span>  stock_qty <span class="op"><</span> <span class="nu">0</span>;
 
-<span class="cm">-- CHECK 3: Overtime rate anomaly (>3× base)</span>
-<span class="kw">SELECT</span> employee_id, base_rate, overtime_rate,
-       overtime_rate <span class="op">/</span> base_rate <span class="kw">AS</span> multiplier
-<span class="kw">FROM</span>   staging.payroll_extract
-<span class="kw">WHERE</span>  overtime_rate <span class="op">/</span> NULLIF(base_rate,<span class="nu">0</span>) <span class="op">></span> <span class="nu">3.0</span>;
+<span class="cm">-- CHECK 3: Missing supplier mapping</span>
+<span class="kw">SELECT</span> s.part_id
+<span class="kw">FROM</span>   staging.inventory_snapshot s
+<span class="kw">LEFT JOIN</span> ref.supplier_catalog c
+       <span class="kw">ON</span> s.part_id <span class="op">=</span> c.part_id
+<span class="kw">WHERE</span>  c.part_id <span class="kw">IS NULL</span>;
 
-<span class="cm">-- CHECK 4: Invalid pay-code mapping</span>
-<span class="kw">SELECT</span> p.employee_id, p.pay_code
-<span class="kw">FROM</span>   staging.payroll_extract p
-<span class="kw">LEFT JOIN</span> ref.valid_pay_codes r
-       <span class="kw">ON</span> p.pay_code <span class="op">=</span> r.code
-<span class="kw">WHERE</span>  r.code <span class="kw">IS NULL</span>;</pre>
+<span class="cm">-- CHECK 4: Future-dated receipts</span>
+<span class="kw">SELECT</span> part_id, receipt_date
+<span class="kw">FROM</span>   staging.inventory_snapshot
+<span class="kw">WHERE</span>  receipt_date <span class="op">></span> <span class="fn">GETDATE</span>();</pre>
       </div>
-      <p class="code-caption">Each check returns rows only when a defect exists. Empty result = passed. Any row = pipeline blocked. Zero incorrect pay-runs across 4 consecutive monthly cycles.</p>
+      <p class="code-caption">Each query returns rows only when a defect exists. Empty result = passed. Any rows = blocked. Zero KPI disputes after implementing this validation suite.</p>
     </div>
-
   </div>
 </div>
 
 <hr class="full-rule"/>
 
-<!-- ─── CASE STUDY CARDS ─── -->
 <div id="work" class="section">
   <div class="eyebrow">Case Studies</div>
   <h2 class="section-h">Where outcomes were built</h2>
@@ -526,12 +495,11 @@ CHECKS <span class="op">=</span> [
 
   <div class="case-cards">
 
-    <!-- CARD 01 -->
     <div class="case-card reveal">
       <div class="case-card-body">
         <div class="case-card-idx">Case 01 of 03</div>
         <div class="case-card-co">Grad Careers Australia · Sep 2024 – Present</div>
-        <div class="case-card-title">Silently failing pipelines were giving schedulers corrupted staffing data — every single day</div>
+        <div class="case-card-title">Silently failing pipelines were giving schedulers corrupted staffing data every single day</div>
         <div class="case-metrics-strip">
           <div class="case-metric amber"><div class="case-metric-num">–40%</div><div class="case-metric-label">Reporting disputes</div></div>
           <div class="case-metric teal"><div class="case-metric-num">+20–25%</div><div class="case-metric-label">Staffing accuracy</div></div>
@@ -542,39 +510,28 @@ CHECKS <span class="op">=</span> [
           <span class="case-tag">ADF</span><span class="case-tag">Microsoft Fabric</span><span class="case-tag">Delta Lake</span>
           <span class="case-tag">Python</span><span class="case-tag">T-SQL</span><span class="case-tag">Power BI</span><span class="case-tag">Azure DevOps</span>
         </div>
-        <a href="case-01.html" class="case-card-link">Read full case study — architecture + code →</a>
+        <a href="microsoft-fabric-implementation.html" class="case-card-link">Read full case study — architecture + code →</a>
       </div>
       <div class="case-card-arch">
-        <div class="arch-label">Architecture overview</div>
-        <svg viewBox="0 0 240 300" width="200" xmlns="http://www.w3.org/2000/svg" style="font-family:'IBM Plex Mono',monospace">
-          <!-- Source -->
+        <div class="arch-label">Architecture preview</div>
+        <svg viewBox="0 0 240 300" width="230" xmlns="http://www.w3.org/2000/svg" style="font-family:'IBM Plex Mono',monospace">
           <rect x="60" y="10" width="120" height="32" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
           <text x="120" y="30" text-anchor="middle" font-size="9" fill="#92400E">Booking System</text>
-          <!-- Arrow -->
           <line x1="120" y1="42" x2="120" y2="58" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr)"/>
-          <!-- ADF -->
           <rect x="50" y="58" width="140" height="32" rx="3" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
           <text x="120" y="74" text-anchor="middle" font-size="8" fill="#1D4ED8" font-weight="500">ADF · Watermark Merge</text>
           <text x="120" y="85" text-anchor="middle" font-size="7" fill="#3B82F6">5 parameterised pipelines</text>
-          <!-- Arrow -->
           <line x1="120" y1="90" x2="120" y2="106" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr)"/>
-          <!-- Bronze -->
           <rect x="60" y="106" width="120" height="28" rx="3" fill="#F3F2EE" stroke="#D6D0C8" stroke-width="1.5"/>
           <text x="120" y="124" text-anchor="middle" font-size="8.5" fill="#78716C">Bronze · Raw Delta</text>
-          <!-- Arrow -->
           <line x1="120" y1="134" x2="120" y2="150" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr)"/>
-          <!-- Quality Gate -->
           <rect x="40" y="150" width="160" height="36" rx="3" fill="#FEF2F2" stroke="#FECACA" stroke-width="1.5"/>
           <text x="120" y="166" text-anchor="middle" font-size="8.5" fill="#B91C1C" font-weight="500">Quality Gate · 12 Checks</text>
           <text x="120" y="179" text-anchor="middle" font-size="7" fill="#DC2626">Hard-blocks on any failure</text>
-          <!-- Arrow -->
           <line x1="120" y1="186" x2="120" y2="202" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr)"/>
-          <!-- Silver/Gold -->
           <rect x="60" y="202" width="120" height="28" rx="3" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1.5"/>
           <text x="120" y="220" text-anchor="middle" font-size="8.5" fill="#0F766E">Silver → Gold · 7 tables</text>
-          <!-- Arrow -->
           <line x1="120" y1="230" x2="120" y2="246" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr)"/>
-          <!-- Power BI -->
           <rect x="60" y="246" width="120" height="28" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
           <text x="120" y="264" text-anchor="middle" font-size="8.5" fill="#92400E">Power BI · 2 Dashboards</text>
           <defs>
@@ -586,12 +543,11 @@ CHECKS <span class="op">=</span> [
       </div>
     </div>
 
-    <!-- CARD 02 -->
     <div class="case-card reveal">
       <div class="case-card-body">
         <div class="case-card-idx">Case 02 of 03</div>
         <div class="case-card-co">AIML · University of Adelaide · Sep 2023 – Sep 2024</div>
-        <div class="case-card-title">Government reporting deadlines were being missed — 3-day manual reconciliation, every single month</div>
+        <div class="case-card-title">Government reporting deadlines were being missed — 3-day manual reconciliation every month</div>
         <div class="case-metrics-strip">
           <div class="case-metric amber"><div class="case-metric-num">+25%</div><div class="case-metric-label">Audit accuracy</div></div>
           <div class="case-metric teal"><div class="case-metric-num">3d → 1d</div><div class="case-metric-label">Month-end close</div></div>
@@ -602,41 +558,34 @@ CHECKS <span class="op">=</span> [
           <span class="case-tag">Databricks</span><span class="case-tag">PySpark</span><span class="case-tag">Delta Lake</span>
           <span class="case-tag">dbt</span><span class="case-tag">T-SQL</span><span class="case-tag">Power BI</span>
         </div>
-        <a href="case-02.html" class="case-card-link">Read full case study — architecture + code →</a>
+        <a href="databricks-compliance-platform.html" class="case-card-link">Read full case study — architecture + code →</a>
       </div>
       <div class="case-card-arch">
-        <div class="arch-label">Architecture overview</div>
-        <svg viewBox="0 0 240 310" width="200" xmlns="http://www.w3.org/2000/svg">
-          <!-- 3 Sources -->
+        <div class="arch-label">Architecture preview</div>
+        <svg viewBox="0 0 240 310" width="230" xmlns="http://www.w3.org/2000/svg">
           <rect x="5" y="10" width="68" height="28" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
           <text x="39" y="28" text-anchor="middle" font-size="7.5" fill="#92400E">Finance Sys A</text>
           <rect x="86" y="10" width="68" height="28" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
           <text x="120" y="28" text-anchor="middle" font-size="7.5" fill="#92400E">Finance Sys B</text>
           <rect x="167" y="10" width="68" height="28" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
           <text x="201" y="28" text-anchor="middle" font-size="7.5" fill="#92400E">Finance Sys C</text>
-          <!-- Converge lines -->
           <line x1="39" y1="38" x2="120" y2="72" stroke="#D6D0C8" stroke-width="1.2"/>
           <line x1="120" y1="38" x2="120" y2="72" stroke="#D6D0C8" stroke-width="1.2"/>
           <line x1="201" y1="38" x2="120" y2="72" stroke="#D6D0C8" stroke-width="1.2"/>
-          <!-- Databricks -->
           <rect x="50" y="72" width="140" height="34" rx="3" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
           <text x="120" y="87" text-anchor="middle" font-size="8.5" fill="#1D4ED8" font-weight="500">Databricks PySpark</text>
           <text x="120" y="99" text-anchor="middle" font-size="7" fill="#3B82F6">Normalise + Union all 3 sources</text>
           <line x1="120" y1="106" x2="120" y2="122" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr2)"/>
-          <!-- Rules Engine -->
           <rect x="40" y="122" width="160" height="34" rx="3" fill="#F3F2EE" stroke="#D6D0C8" stroke-width="1.5"/>
           <text x="120" y="138" text-anchor="middle" font-size="8.5" fill="#44403C" font-weight="500">Rules Engine</text>
           <text x="120" y="150" text-anchor="middle" font-size="7" fill="#78716C">22 categories · 9 timestamp rules</text>
           <line x1="120" y1="156" x2="120" y2="172" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr2)"/>
-          <!-- Delta Lake Conformed -->
           <rect x="50" y="172" width="140" height="28" rx="3" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1.5"/>
           <text x="120" y="190" text-anchor="middle" font-size="8.5" fill="#0F766E">Delta Lake · Conformed</text>
           <line x1="120" y1="200" x2="120" y2="216" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr2)"/>
-          <!-- dbt -->
           <rect x="60" y="216" width="120" height="28" rx="3" fill="#F3F2EE" stroke="#D6D0C8" stroke-width="1.5"/>
           <text x="120" y="234" text-anchor="middle" font-size="8.5" fill="#44403C">dbt Modular Layers</text>
           <line x1="120" y1="244" x2="120" y2="260" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr2)"/>
-          <!-- Power BI -->
           <rect x="50" y="260" width="140" height="34" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
           <text x="120" y="276" text-anchor="middle" font-size="8.5" fill="#92400E">Power BI Drill-through</text>
           <text x="120" y="288" text-anchor="middle" font-size="7" fill="#B45309">Exception → Entity → Txn</text>
@@ -649,54 +598,46 @@ CHECKS <span class="op">=</span> [
       </div>
     </div>
 
-    <!-- CARD 03 -->
     <div class="case-card reveal">
       <div class="case-card-body">
         <div class="case-card-idx">Case 03 of 03</div>
-        <div class="case-card-co">OESON Global · Jan 2023 – Jul 2023</div>
-        <div class="case-card-title">Three teams. Three overtime methods. No validation before money left the company.</div>
+        <div class="case-card-co">Hyundai Mobis Technical Centre · India · 2019 – 2022</div>
+        <div class="case-card-title">Warehouse KPI disputes consumed hours every week — no single source of truth for performance metrics</div>
         <div class="case-metrics-strip">
-          <div class="case-metric teal"><div class="case-metric-num">Zero</div><div class="case-metric-label">Incorrect pay-runs (4 cycles)</div></div>
-          <div class="case-metric amber"><div class="case-metric-num">5d → 2d</div><div class="case-metric-label">Finance approval</div></div>
-          <div class="case-metric teal"><div class="case-metric-num">1–2 wks</div><div class="case-metric-label">Saved per cycle</div></div>
+          <div class="case-metric teal"><div class="case-metric-num">–25–30%</div><div class="case-metric-label">KPI disputes</div></div>
+          <div class="case-metric amber"><div class="case-metric-num">8 hrs/wk</div><div class="case-metric-label">Manual effort eliminated</div></div>
+          <div class="case-metric teal"><div class="case-metric-num">1 hr → 15m</div><div class="case-metric-label">Root-cause analysis</div></div>
         </div>
-        <p class="case-card-lead">Payroll for 250,000+ records ran on manual CSV exports with no automated validation. Wrong overtime calculations slipped through to Finance sign-off unchecked. I built a 12-check Python + SQL validation engine that intercepted every defect before the pay-run — four cycles, zero errors.</p>
+        <p class="case-card-lead">Warehouse managers and Finance were using different numbers for the same KPIs — sourced from incompatible exports. I built an ADF pipeline and star schema dimensional model (6 dimensions, 3 fact tables) with 8 Power BI dashboards as the single source of truth.</p>
         <div class="case-card-tags">
-          <span class="case-tag">Azure Synapse</span><span class="case-tag">Python</span>
-          <span class="case-tag">T-SQL</span><span class="case-tag">Power BI</span><span class="case-tag">Git</span>
+          <span class="case-tag">ADF</span><span class="case-tag">Azure SQL</span><span class="case-tag">T-SQL</span>
+          <span class="case-tag">Power BI</span><span class="case-tag">Spark</span><span class="case-tag">Star Schema</span>
         </div>
-        <a href="case-03.html" class="case-card-link">Read full case study — architecture + code →</a>
+        <a href="manufacturing-supply-chain-bi.html" class="case-card-link">Read full case study — architecture + code →</a>
       </div>
       <div class="case-card-arch">
-        <div class="arch-label">Architecture overview</div>
-        <svg viewBox="0 0 240 280" width="200" xmlns="http://www.w3.org/2000/svg">
-          <!-- Source systems -->
+        <div class="arch-label">Architecture preview</div>
+        <svg viewBox="0 0 240 280" width="230" xmlns="http://www.w3.org/2000/svg">
           <rect x="30" y="10" width="80" height="28" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
-          <text x="70" y="28" text-anchor="middle" font-size="7.5" fill="#92400E">HR System</text>
+          <text x="70" y="28" text-anchor="middle" font-size="7.5" fill="#92400E">ERP System</text>
           <rect x="130" y="10" width="80" height="28" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
-          <text x="170" y="28" text-anchor="middle" font-size="7.5" fill="#92400E">Time System</text>
-          <!-- Lines converge -->
+          <text x="170" y="28" text-anchor="middle" font-size="7.5" fill="#92400E">WMS System</text>
           <line x1="70" y1="38" x2="120" y2="70" stroke="#D6D0C8" stroke-width="1.2"/>
           <line x1="170" y1="38" x2="120" y2="70" stroke="#D6D0C8" stroke-width="1.2"/>
-          <!-- Synapse -->
           <rect x="45" y="70" width="150" height="32" rx="3" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
-          <text x="120" y="86" text-anchor="middle" font-size="8.5" fill="#1D4ED8" font-weight="500">Azure Synapse Extract</text>
-          <text x="120" y="97" text-anchor="middle" font-size="7" fill="#3B82F6">250k+ records consolidated</text>
+          <text x="120" y="86" text-anchor="middle" font-size="8.5" fill="#1D4ED8" font-weight="500">ADF Extract Pipeline</text>
+          <text x="120" y="97" text-anchor="middle" font-size="7" fill="#3B82F6">Nightly incremental loads</text>
           <line x1="120" y1="102" x2="120" y2="118" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr3)"/>
-          <!-- Validation -->
-          <rect x="35" y="118" width="170" height="36" rx="3" fill="#FEF2F2" stroke="#FECACA" stroke-width="1.5"/>
-          <text x="120" y="134" text-anchor="middle" font-size="8.5" fill="#B91C1C" font-weight="500">Python + SQL · 12 Checks</text>
-          <text x="120" y="147" text-anchor="middle" font-size="7" fill="#DC2626">Blocks pay-run on any defect</text>
+          <rect x="50" y="118" width="140" height="36" rx="3" fill="#F3F2EE" stroke="#D6D0C8" stroke-width="1.5"/>
+          <text x="120" y="134" text-anchor="middle" font-size="8.5" fill="#44403C" font-weight="500">Star Schema</text>
+          <text x="120" y="147" text-anchor="middle" font-size="7" fill="#78716C">6 dimensions · 3 fact tables</text>
           <line x1="120" y1="154" x2="120" y2="170" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr3)"/>
-          <!-- SQL Views -->
-          <rect x="50" y="170" width="140" height="28" rx="3" fill="#F3F2EE" stroke="#D6D0C8" stroke-width="1.5"/>
-          <text x="120" y="188" text-anchor="middle" font-size="8.5" fill="#44403C">8 Reusable SQL Views</text>
+          <rect x="60" y="170" width="120" height="28" rx="3" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1.5"/>
+          <text x="120" y="188" text-anchor="middle" font-size="8.5" fill="#0F766E">Azure SQL Database</text>
           <line x1="120" y1="198" x2="120" y2="214" stroke="#D6D0C8" stroke-width="1.5" marker-end="url(#arr3)"/>
-          <!-- Finance -->
-          <rect x="40" y="214" width="80" height="28" rx="3" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1.5"/>
-          <text x="80" y="232" text-anchor="middle" font-size="8" fill="#0F766E">Finance Sign-off</text>
-          <rect x="130" y="214" width="80" height="28" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
-          <text x="170" y="232" text-anchor="middle" font-size="8" fill="#92400E">Power BI Recon</text>
+          <rect x="50" y="214" width="140" height="34" rx="3" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1.5"/>
+          <text x="120" y="230" text-anchor="middle" font-size="8.5" fill="#92400E">Power BI · 8 Dashboards</text>
+          <text x="120" y="243" text-anchor="middle" font-size="7" fill="#B45309">Warehouse + Supplier KPIs</text>
           <defs>
             <marker id="arr3" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
               <path d="M0,0 L0,6 L6,3 z" fill="#D6D0C8"/>
@@ -711,7 +652,6 @@ CHECKS <span class="op">=</span> [
 
 <hr class="full-rule"/>
 
-<!-- ─── EXPERIENCE ─── -->
 <div id="experience" class="section">
   <div class="eyebrow">Professional History</div>
   <h2 class="section-h">Experience</h2>
@@ -752,22 +692,6 @@ CHECKS <span class="op">=</span> [
     </div>
     <div class="exp-row reveal">
       <div>
-        <div class="exp-period">Jan 2023 – Jul 2023</div>
-        <div class="exp-win">↑ 5d → 2d approval</div>
-      </div>
-      <div>
-        <div class="exp-co">OESON Global · Australia</div>
-        <div class="exp-role">Data Engineer</div>
-        <div class="exp-highlight">↑ Zero incorrect pay-runs across 4 cycles</div>
-        <p class="exp-desc">Built enterprise payroll pipelines and a 12-check validation framework for 250,000+ records. Every defect caught before Finance sign-off — four consecutive pay cycles, zero incorrect payments.</p>
-        <div class="exp-tags">
-          <span class="exp-tag">Azure Synapse</span><span class="exp-tag">Python</span><span class="exp-tag">T-SQL</span>
-          <span class="exp-tag">Power BI</span><span class="exp-tag">Git</span>
-        </div>
-      </div>
-    </div>
-    <div class="exp-row reveal">
-      <div>
         <div class="exp-period">2019 – 2022</div>
         <div class="exp-win">↑ KPI disputes –30%</div>
       </div>
@@ -801,7 +725,6 @@ CHECKS <span class="op">=</span> [
   </div>
 </div>
 
-<!-- ─── CONTACT ─── -->
 <div class="contact-bg" id="contact">
   <div class="contact-inner">
     <div>
@@ -826,10 +749,10 @@ CHECKS <span class="op">=</span> [
     <div class="avail">
       <div class="avail-header"><div class="avail-dot"></div>Open to opportunities</div>
       <div class="avail-row"><div class="avail-k">Work rights</div><div class="avail-v green">Full · 485 Visa</div></div>
-      <div class="avail-row"><div class="avail-k">Experience</div><div class="avail-v">4+ yrs · 3 yrs in AU</div></div>
+      <div class="avail-row"><div class="avail-k">Experience</div><div class="avail-v">4+ yrs · 2.5 yrs in AU</div></div>
       <div class="avail-row"><div class="avail-k">Role</div><div class="avail-v">Data Engineer</div></div>
       <div class="avail-row"><div class="avail-k">Location</div><div class="avail-v">Australia · Remote OK</div></div>
-      <div class="avail-row"><div class="avail-k">Salary target</div><div class="avail-v amber">$75k – 90k</div></div>
+      <div class="avail-row"><div class="avail-k">Salary target</div><div class="avail-v amber">$90k – $115k</div></div>
       <div class="avail-row"><div class="avail-k">Notice period</div><div class="avail-v green">Immediate</div></div>
     </div>
   </div>
